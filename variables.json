@@ -1,0 +1,58 @@
+{
+  "date": "October 22, 2018",
+  "authors": [
+    {
+      "github": "zouter",
+      "name": "Wouter Saelens",
+      "initials": "WS",
+      "orcid": "0000-0002-7114-6248",
+      "twitter": "zouters",
+      "email": "wouter.saelens@gmail.com",
+      "affiliations": [
+        "Ghent University"
+      ],
+      "funders": "Fond Wetenschappelijk Onderzoek",
+      "affiliation_numbers": [
+        1
+      ]
+    },
+    {
+      "name": "Robrecht Cannoodt",
+      "affiliation_numbers": []
+    },
+    {
+      "name": "Lukas Weber",
+      "affiliation_numbers": []
+    },
+    {
+      "name": "Charlotte Soneson",
+      "affiliation_numbers": []
+    },
+    {
+      "name": "Yvan Saeys",
+      "affiliation_numbers": []
+    },
+    {
+      "name": "Mark D. Robinson",
+      "affiliation_numbers": []
+    }
+  ],
+  "affiliations": [
+    {
+      "affiliation": "Ghent University",
+      "affiliation_number": 1
+    }
+  ],
+  "ci_source": {
+    "repo_slug": "komparo/manuscript-workflow",
+    "repo_owner": "komparo",
+    "repo_name": "manuscript-workflow",
+    "commit": "79bc089f546c7d9f5f1711db7c5b01a4fe46f083"
+  },
+  "manuscript_stats": {
+    "reference_counts": {
+      "total": 0
+    },
+    "word_count": 216
+  }
+}
