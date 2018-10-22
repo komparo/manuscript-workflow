@@ -16,8 +16,8 @@ git remote set-url origin git@github.com:$TRAVIS_REPO_SLUG.git
 
 # Decrypt and add SSH key
 openssl aes-256-cbc \
-  -K $encrypted_a150e1dcd5f5_key \
-  -iv $encrypted_a150e1dcd5f5_iv \
+  -K $encrypted_b23263a5ac8b_key \
+  -iv $encrypted_b23263a5ac8b_iv \
   -in ci/deploy.key.enc \
   -out ci/deploy.key -d
 eval `ssh-agent -s`
