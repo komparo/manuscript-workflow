@@ -1,4 +1,4 @@
-# Manuscript for the Komparo prototype
+# A workflow for continuous and collaborative benchmarking, applied on emerging single-cell analysis methods
 
 <!-- usage note: edit the H1 title above to personalize the manuscript -->
 
@@ -9,8 +9,6 @@
 ## Manuscript description
 
 <!-- usage note: edit this section. -->
-
-Description of the komparo prototype
 
 ## Manubot
 

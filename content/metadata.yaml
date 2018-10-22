@@ -1,27 +1,29 @@
 ---
-title: "Manubot Rootstock: Manuscript Title"
+title: "A workflow for continuous and collaborative benchmarking, applied on emerging single-cell analysis methods"
 keywords:
-  - markdown
-  - publishing
-  - manubot
+  - bioinformatics
+  - methods
+  - benchmarking
+  - single-cell analysis
 lang: en-US
 author_info:
   -
-    github: johndoe
-    name: John Doe
-    initials: JD
-    orcid: XXXX-XXXX-XXXX-XXXX
-    twitter: johndoe
-    email: john.doe@something.com
+    github: zouter
+    name: Wouter Saelens
+    initials: WS
+    orcid: 0000-0002-7114-6248
+    twitter: zouters
+    email: wouter.saelens@gmail.com
     affiliations:
-      - Department of Something, University of Whatever
-    funders: Grant XXXXXXXX
+      - Ghent University
+    funders: Fond Wetenschappelijk Onderzoek
+  - 
+    name: Robrecht Cannoodt
+  - 
+    name: Lukas Weber
+  - 
+    name: Charlotte Soneson
   -
-    github: janeroe
-    name: Jane Roe
-    initials: JR
-    orcid: XXXX-XXXX-XXXX-XXXX
-    email: jane.roe@whatever.edu
-    affiliations:
-      - Department of Something, University of Whatever
-      - Department of Whatever, University of Something
+    name: Yvan Saeys
+  - 
+    name: Mark D. Robinson
