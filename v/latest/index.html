@@ -10,7 +10,7 @@
   <meta name="author" content="Charlotte Soneson" />
   <meta name="author" content="Yvan Saeys" />
   <meta name="author" content="Mark D. Robinson" />
-  <meta name="dcterms.date" content="2018-10-22" />
+  <meta name="dcterms.date" content="2018-10-25" />
   <meta name="keywords" content="bioinformatics, methods, benchmarking, single-cell analysis" />
   <title>A workflow for continuous and collaborative benchmarking</title>
   <style type="text/css">
@@ -32,10 +32,10 @@
 <header id="title-block-header">
 <h1 class="title">A workflow for continuous and collaborative benchmarking</h1>
 </header>
-<p><small><em> This manuscript (<a href="https://komparo.github.io/manuscript-workflow/v/79bc089f546c7d9f5f1711db7c5b01a4fe46f083/">permalink</a>) was automatically generated from <a href="https://github.com/komparo/manuscript-workflow/tree/79bc089f546c7d9f5f1711db7c5b01a4fe46f083">komparo/manuscript-workflow@79bc089</a> on October 22, 2018. </em></small></p>
+<p><small><em> This manuscript (<a href="https://komparo.github.io/manuscript-workflow/v/cb72fabb97e971784b57bac4a44f506399144783/">permalink</a>) was automatically generated from <a href="https://github.com/komparo/manuscript-workflow/tree/cb72fabb97e971784b57bac4a44f506399144783">komparo/manuscript-workflow@cb72fab</a> on October 25, 2018. </em></small></p>
 <h2 id="authors">Authors</h2>
 <ul>
-<li><p><strong>Wouter Saelens</strong><br> <img src="images/orcid.svg" alt="ORCID icon" width="13" height="13" /> <a href="https://orcid.org/0000-0002-7114-6248">0000-0002-7114-6248</a> · <img src="images/github.svg" alt="GitHub icon" width="13" height="13" /> <a href="https://github.com/zouter">zouter</a> · <img src="images/twitter.svg" alt="Twitter icon" width="13" height="13" /> <a href="https://twitter.com/zouters">zouters</a><br> <small> Ghent University · Funded by Fond Wetenschappelijk Onderzoek </small></p></li>
+<li><p><strong>Wouter Saelens</strong><br> <img src="images/orcid.svg" alt="ORCID icon" width="13" height="13" /> <a href="https://orcid.org/0000-0002-7114-6248">0000-0002-7114-6248</a> · <img src="images/github.svg" alt="GitHub icon" width="13" height="13" /> <a href="https://github.com/zouter">zouter</a> · <img src="images/twitter.svg" alt="Twitter icon" width="13" height="13" /> <a href="https://twitter.com/zouters">zouters</a><br> <small> Ghent University · Funded by Fonds Wetenschappelijk Onderzoek </small></p></li>
 <li><p><strong>Robrecht Cannoodt</strong><br><br> <small> </small></p></li>
 <li><p><strong>Lukas Weber</strong><br><br> <small> </small></p></li>
 <li><p><strong>Charlotte Soneson</strong><br><br> <small> </small></p></li>
@@ -43,10 +43,64 @@
 <li><p><strong>Mark D. Robinson</strong><br><br> <small> </small></p></li>
 </ul>
 <h2 id="abstract" class="page_break_before">Abstract</h2>
+<p>Benchmarking is a critical step in the development of bioinformatics tools, but the way it is done at the moment has some limitations. Because each benchmark is developed in isolation, they tend to be hard to compare, extend and are rapidly outdated. To address this, we combined modern software development tools to create a workflow for continuous and collaborative benchmarking. The structure of the benchmark is highly modular, so that anyone can contribute a set of datasets, metrics, methods or interprete the results, and get credit for their input. We apply this worklow on two emerging types of methods in the single-cell analysis field: trajectory differential expression (https://github.com/komparo/tde) and trajectory alignment (https://github.com/komparo/ta).</p>
+<h2 id="introduction">Introduction</h2>
+<figure>
+<img src="images/pipeline.png" alt="Figure 1: The pipeline." id="fig:pipeline" style="width:100.0%" /><figcaption><span>Figure 1:</span> The pipeline.</figcaption>
+</figure>
+<h2 id="modules">Modules</h2>
+<p>Our pipeline consists of several “modules”, which are integrated and connected to ultimately produce a full benchmarking pipeline. These modules contain the code to generate some datasets, run a method and compare the output. This is similar to some related work (SummarizedBenchmark <span class="citation" data-cites="Yqv1RKnE">[<a href="#ref-Yqv1RKnE">1</a>]</span> and Dynamic Statistical Comparisons, https://github.com/stephenslab/dsc). Moreover, to assure a balanced interpretation of the results, report modules will aggregate and summarise the results, and provide some interpretation.</p>
+<p>A module in our proposed workflow is more than just code, but includes several</p>
+<h3 id="scripts-and-packages">Scripts and packages</h3>
+<p>There large diversity in programming languages used in bio-informatics, even within particular a particular subfield (such as single-cell bioinformatics <span class="citation" data-cites="ekkzy8ZR">[<a href="#ref-ekkzy8ZR">2</a>]</span>). A collaborative workflow should therefore never “lock-in” to a particular language,</p>
+<h3 id="portable-environment">Portable environment</h3>
+<h3 id="pipeline-manager">Pipeline manager</h3>
+<ul>
+<li>Controls reproducible execution of the scripts within the environment</li>
+<li>Input and output should always be explicitely defined</li>
+<li>Rerunning the module, or parts of the module, should only be triggered if input has changed</li>
+</ul>
+<h3 id="version-control">Version control</h3>
+<ul>
+<li>Crucial for keeping track of what was changed when</li>
+<li>Also crucial for working together</li>
+</ul>
+<h3 id="code-sharing-platform">Code sharing platform</h3>
+<p>Code sharing is more than a place to deposit code: - Create issues - Create pull requests - Versioning the code</p>
+<h3 id="automated-testing-and-continuous-integration">Automated testing and continuous integration</h3>
+<ul>
+<li>90% of the errors are caught here</li>
+</ul>
+<h3 id="environment-registry">Environment registry</h3>
+<ul>
+<li>Easily downloadable by anyone wanting to replicate the environment</li>
+</ul>
+<h2 id="combining-modules-within-a-benchmark">Combining modules within a benchmark</h2>
+<h3 id="combining-modules">Combining modules</h3>
+<h3 id="pipeline-manager-1">Pipeline manager</h3>
+<h3 id="execution">Execution</h3>
+<h3 id="continuous-publishing">Continuous publishing</h3>
+<h3 id="adding-or-updating-a-module">Adding or updating a module</h3>
+<h3 id="continuous-integration">Continuous integration</h3>
+<h3 id="versioning">Versioning</h3>
+<h2 id="outlook">Outlook</h2>
+<p>The project as it stands now is meant to be a proof-of-concept. In the ideal case, a continuous benchmarking project should be supported by a larger consortium, such as the Human Cell Atlas, which would not only assure its continuity, but would also provide infrastructure support. Perhaps the code platform, continuous integration, and environment registry servers could be hosted by such as consortium. By providing a platform where old ideas are rigorously tested, and new ideas can be easily validated,</p>
+<p>A platform like this should be build upon the idea that future methods and output formats can never be predicted, but at least we can prepare for them.</p>
 <h2 id="references" class="page_break_before">References</h2>
 <!-- Explicitly insert bibliography here -->
 <div id="refs">
-
+<div id="ref-Yqv1RKnE">
+<p>1. <strong>Reproducible and replicable comparisons using SummarizedBenchmark</strong><br />
+Patrick K Kimes, Alejandro Reyes<br />
+<em>Bioinformatics</em> (2018-07-17) <a href="https://doi.org/gdvt5p">https://doi.org/gdvt5p</a><br />
+DOI: <a href="https://doi.org/10.1093/bioinformatics/bty627">10.1093/bioinformatics/bty627</a> · PMID: <a href="http://www.ncbi.nlm.nih.gov/pubmed/30016409">30016409</a></p>
+</div>
+<div id="ref-ekkzy8ZR">
+<p>2. <strong>Exploring the single-cell RNA-seq analysis landscape with the scRNA-tools database</strong><br />
+Luke Zappia, Belinda Phipson, Alicia Oshlack<br />
+<em>PLOS Computational Biology</em> (2018-06-25) <a href="https://doi.org/gdqcjz">https://doi.org/gdqcjz</a><br />
+DOI: <a href="https://doi.org/10.1371/journal.pcbi.1006245">10.1371/journal.pcbi.1006245</a> · PMID: <a href="http://www.ncbi.nlm.nih.gov/pubmed/29939984">29939984</a> · PMCID: <a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC6034903">PMC6034903</a></p>
+</div>
 </div>
 <script>
 // AnchorJS minified version below.
