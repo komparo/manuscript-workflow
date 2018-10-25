@@ -1,1 +1,85 @@
-[]
+[
+  {
+    "publisher": "Oxford University Press (OUP)",
+    "DOI": "10.1093/bioinformatics/bty627",
+    "type": "article-journal",
+    "source": "Crossref",
+    "title": "Reproducible and replicable comparisons using SummarizedBenchmark",
+    "author": [
+      {
+        "given": "Patrick K",
+        "family": "Kimes"
+      },
+      {
+        "given": "Alejandro",
+        "family": "Reyes"
+      }
+    ],
+    "container-title": "Bioinformatics",
+    "language": "en",
+    "editor": [
+      {
+        "given": "Bonnie",
+        "family": "Berger"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2018,
+          7,
+          17
+        ]
+      ]
+    },
+    "URL": "https://doi.org/gdvt5p",
+    "PMID": "30016409",
+    "id": "Yqv1RKnE"
+  },
+  {
+    "publisher": "Public Library of Science (PLoS)",
+    "issue": "6",
+    "DOI": "10.1371/journal.pcbi.1006245",
+    "type": "article-journal",
+    "page": "e1006245",
+    "source": "Crossref",
+    "title": "Exploring the single-cell RNA-seq analysis landscape with the scRNA-tools database",
+    "volume": "14",
+    "author": [
+      {
+        "given": "Luke",
+        "family": "Zappia"
+      },
+      {
+        "given": "Belinda",
+        "family": "Phipson"
+      },
+      {
+        "given": "Alicia",
+        "family": "Oshlack"
+      }
+    ],
+    "container-title": "PLOS Computational Biology",
+    "language": "en",
+    "editor": [
+      {
+        "given": "Dina",
+        "family": "Schneidman"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2018,
+          6,
+          25
+        ]
+      ]
+    },
+    "URL": "https://doi.org/gdqcjz",
+    "container-title-short": "PLoS Comput Biol",
+    "PMCID": "PMC6034903",
+    "PMID": "29939984",
+    "id": "ekkzy8ZR"
+  }
+]

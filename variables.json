@@ -1,5 +1,5 @@
 {
-  "date": "October 22, 2018",
+  "date": "October 25, 2018",
   "authors": [
     {
       "github": "zouter",
@@ -11,7 +11,7 @@
       "affiliations": [
         "Ghent University"
       ],
-      "funders": "Fond Wetenschappelijk Onderzoek",
+      "funders": "Fonds Wetenschappelijk Onderzoek",
       "affiliation_numbers": [
         1
       ]
@@ -47,12 +47,13 @@
     "repo_slug": "komparo/manuscript-workflow",
     "repo_owner": "komparo",
     "repo_name": "manuscript-workflow",
-    "commit": "79bc089f546c7d9f5f1711db7c5b01a4fe46f083"
+    "commit": "cb72fabb97e971784b57bac4a44f506399144783"
   },
   "manuscript_stats": {
     "reference_counts": {
-      "total": 0
+      "doi": 2,
+      "total": 2
     },
-    "word_count": 216
+    "word_count": 704
   }
 }
