@@ -1,5 +1,181 @@
 [
   {
+    "publisher": "Wiley",
+    "DOI": "10.1002/prot.25415",
+    "type": "article-journal",
+    "page": "7-15",
+    "source": "Crossref",
+    "title": "Critical assessment of methods of protein structure prediction (CASP)-Round XII",
+    "volume": "86",
+    "author": [
+      {
+        "given": "John",
+        "family": "Moult"
+      },
+      {
+        "given": "Krzysztof",
+        "family": "Fidelis"
+      },
+      {
+        "given": "Andriy",
+        "family": "Kryshtafovych"
+      },
+      {
+        "given": "Torsten",
+        "family": "Schwede"
+      },
+      {
+        "given": "Anna",
+        "family": "Tramontano"
+      }
+    ],
+    "container-title": "Proteins: Structure, Function, and Bioinformatics",
+    "language": "en",
+    "issued": {
+      "date-parts": [
+        [
+          2017,
+          12,
+          15
+        ]
+      ]
+    },
+    "URL": "https://doi.org/gfj2zw",
+    "container-title-short": "Proteins",
+    "PMCID": "PMC5897042",
+    "PMID": "29082672",
+    "id": "bxALj0Vw"
+  },
+  {
+    "publisher": "Wiley",
+    "issue": "1",
+    "DOI": "10.1038/msb.2011.70",
+    "type": "article-journal",
+    "page": "537-537",
+    "source": "Crossref",
+    "title": "The self-assessment trap: can we all be better than average?",
+    "volume": "7",
+    "author": [
+      {
+        "given": "R.",
+        "family": "Norel"
+      },
+      {
+        "given": "J. J.",
+        "family": "Rice"
+      },
+      {
+        "given": "G.",
+        "family": "Stolovitzky"
+      }
+    ],
+    "container-title": "Molecular Systems Biology",
+    "language": "en",
+    "issued": {
+      "date-parts": [
+        [
+          2014,
+          4,
+          16
+        ]
+      ]
+    },
+    "URL": "https://doi.org/bxxmvz",
+    "container-title-short": "Molecular Systems Biology",
+    "PMCID": "PMC3261704",
+    "PMID": "21988833",
+    "id": "9jjMfS7z"
+  },
+  {
+    "publisher": "Springer Nature",
+    "issue": "4",
+    "DOI": "10.1038/nmeth.3805",
+    "type": "article-journal",
+    "page": "283-283",
+    "source": "Crossref",
+    "title": "iCOBRA: open, reproducible, standardized and live method benchmarking",
+    "volume": "13",
+    "author": [
+      {
+        "given": "Charlotte",
+        "family": "Soneson"
+      },
+      {
+        "given": "Mark D",
+        "family": "Robinson"
+      }
+    ],
+    "container-title": "Nature Methods",
+    "language": "en",
+    "issued": {
+      "date-parts": [
+        [
+          2016,
+          4
+        ]
+      ]
+    },
+    "URL": "https://doi.org/gfj2zx",
+    "container-title-short": "Nat Methods",
+    "PMID": "27027585",
+    "id": "Bqyk8BrN"
+  },
+  {
+    "publisher": "Springer Nature",
+    "issue": "10",
+    "DOI": "10.1038/nmeth.4402",
+    "type": "article-journal",
+    "page": "979-982",
+    "source": "Crossref",
+    "title": "Reversed graph embedding resolves complex single-cell trajectories",
+    "volume": "14",
+    "author": [
+      {
+        "given": "Xiaojie",
+        "family": "Qiu"
+      },
+      {
+        "given": "Qi",
+        "family": "Mao"
+      },
+      {
+        "given": "Ying",
+        "family": "Tang"
+      },
+      {
+        "given": "Li",
+        "family": "Wang"
+      },
+      {
+        "given": "Raghav",
+        "family": "Chawla"
+      },
+      {
+        "given": "Hannah A",
+        "family": "Pliner"
+      },
+      {
+        "given": "Cole",
+        "family": "Trapnell"
+      }
+    ],
+    "container-title": "Nature Methods",
+    "issued": {
+      "date-parts": [
+        [
+          2017,
+          8,
+          21
+        ]
+      ]
+    },
+    "URL": "https://doi.org/gc5v2g",
+    "container-title-short": "Nat Meth",
+    "PMCID": "PMC5764547",
+    "PMID": "28825705",
+    "id": "16zLRyIvX"
+  },
+  {
     "publisher": "Oxford University Press (OUP)",
     "DOI": "10.1093/bioinformatics/bty627",
     "type": "article-journal",
@@ -35,6 +211,208 @@
     "URL": "https://doi.org/gdvt5p",
     "PMID": "30016409",
     "id": "Yqv1RKnE"
+  },
+  {
+    "publisher": "Cold Spring Harbor Laboratory",
+    "abstract": "<jats:p>Pseudotime estimation from single-cell gene expression allows the recovery of temporal information from otherwise static profiles of individual cells. This pseudotemporal information can be used to characterise transient events in temporally evolving biological systems. Conventional algorithms typically emphasise an unsupervised transcriptome-wide approach and use retrospective analysis to evaluate the behaviour of individual genes. Here we introduce an orthogonal approach termed \"Ouija\" that learns pseudotimes from a small set of marker genes that might ordinarily be used to retrospectively confirm the accuracy of unsupervised pseudotime algorithms. Crucially, we model these genes in terms of switch-like or transient behaviour along the trajectory, allowing us to understand why the pseudotimes have been inferred and learn informative parameters about the behaviour of each gene. Since each gene is associated with a switch or peak time the genes are effectively ordered along with the cells, allowing each part of the trajectory to be understood in terms of the behaviour of certain genes. In the following we introduce our model and demonstrate that in many instances a small panel of marker genes can recover pseudotimes that are consistent with those obtained using the entire transcriptome. Furthermore, we show that our method can detect differences in the regulation timings between two genes and identify \"metastable\" states - discrete cell types along the continuous trajectories - that recapitulate known cell types. Ouija therefore provides a powerful complimentary approach to existing whole transcriptome based pseudotime estimation methods. An open source implementation is available at http://www.github.com/kieranrcampbell/ouija as an R package and at http://www.github.com/kieranrcampbell/ouijaflow as a Python/TensorFlow package.</jats:p>",
+    "DOI": "10.1101/060442",
+    "type": "manuscript",
+    "source": "Crossref",
+    "title": "A descriptive marker gene approach to single-cell pseudotime inference",
+    "author": [
+      {
+        "given": "Kieran R.",
+        "family": "Campbell"
+      },
+      {
+        "given": "Christopher",
+        "family": "Yau"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2016,
+          6,
+          23
+        ]
+      ]
+    },
+    "URL": "https://doi.org/gfj23j",
+    "id": "13yVWlTc9"
+  },
+  {
+    "publisher": "Cold Spring Harbor Laboratory",
+    "abstract": "<jats:p>Recent advances in RNA sequencing enable the generation of genome-wide expression data at the single-cell level, opening up new avenues for transcriptomics and systems biology. A new application of single-cell whole-transcriptomics is the unbiased ordering of cells according to their progression along a dynamic process of interest. We introduce SCORPIUS, a method which can effectively reconstruct an ordering of individual cells without any prior information about the dynamic process. Comprehensive evaluation using ten scRNA-seq datasets shows that SCORPIUS consistently outperforms state-of-the-art techniques. We used SCORPIUS to generate novel hypotheses regarding dendritic cell development, which were subsequently validated in vivo. This work enables data-driven investigation and characterization of dynamic processes and lays the foundation for objective benchmarking of future trajectory inference methods.</jats:p>",
+    "DOI": "10.1101/079509",
+    "type": "manuscript",
+    "source": "Crossref",
+    "title": "SCORPIUS improves trajectory inference and identifies novel modules in dendritic cell development",
+    "author": [
+      {
+        "given": "Robrecht",
+        "family": "Cannoodt"
+      },
+      {
+        "given": "Wouter",
+        "family": "Saelens"
+      },
+      {
+        "given": "Dorine",
+        "family": "Sichien"
+      },
+      {
+        "given": "Simon",
+        "family": "Tavernier"
+      },
+      {
+        "given": "Sophie",
+        "family": "Janssens"
+      },
+      {
+        "given": "Martin",
+        "family": "Guilliams"
+      },
+      {
+        "given": "Bart N",
+        "family": "Lambrecht"
+      },
+      {
+        "given": "Katleen",
+        "family": "De Preter"
+      },
+      {
+        "given": "Yvan",
+        "family": "Saeys"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2016,
+          10,
+          6
+        ]
+      ]
+    },
+    "URL": "https://doi.org/gfj23n",
+    "id": "HkU0XKEf"
+  },
+  {
+    "publisher": "Cold Spring Harbor Laboratory",
+    "abstract": "<jats:p>In a recent publication, Li et al introduced LeafCutter, a new method for detecting and quantifying differential splicing of RNA from RNASeq data. In this work, Li et al first compared LeafCutter to existing methods, then used it for a study of splicing variations and sQTL analysis from a large set of GTEx samples. While the study was elaborate and comprehensive, we want to highlight several issues with the comparative analysis performed by Li et al. We argue these issues created an inaccurate and misleading representation of other tools, namely MAJIQ and rMATS. More broadly, we believe the points we raise regarding the comparative analysis by Li et al are representative of general issues we all, as authors, editors, and reviewers, are faced with and must address in the current times of fast-paced genomics and computational research.</jats:p>",
+    "DOI": "10.1101/463927",
+    "type": "manuscript",
+    "source": "Crossref",
+    "title": "LeafCutter vs. MAJIQ and comparing software in the fast-moving field of genomics",
+    "author": [
+      {
+        "given": "Jorge",
+        "family": "Vaquero-Garcia"
+      },
+      {
+        "given": "Scott",
+        "family": "Norton"
+      },
+      {
+        "given": "Yoseph",
+        "family": "Barash"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2018,
+          11,
+          8
+        ]
+      ]
+    },
+    "URL": "https://doi.org/gfj2zv",
+    "id": "6VtYRDAK"
+  },
+  {
+    "publisher": "Springer Nature",
+    "issue": "1",
+    "DOI": "10.1186/s13059-016-0940-1",
+    "type": "article-journal",
+    "source": "Crossref",
+    "title": "A benchmark for RNA-seq quantification pipelines",
+    "volume": "17",
+    "author": [
+      {
+        "given": "Mingxiang",
+        "family": "Teng"
+      },
+      {
+        "given": "Michael I.",
+        "family": "Love"
+      },
+      {
+        "given": "Carrie A.",
+        "family": "Davis"
+      },
+      {
+        "given": "Sarah",
+        "family": "Djebali"
+      },
+      {
+        "given": "Alexander",
+        "family": "Dobin"
+      },
+      {
+        "given": "Brenton R.",
+        "family": "Graveley"
+      },
+      {
+        "given": "Sheng",
+        "family": "Li"
+      },
+      {
+        "given": "Christopher E.",
+        "family": "Mason"
+      },
+      {
+        "given": "Sara",
+        "family": "Olson"
+      },
+      {
+        "given": "Dmitri",
+        "family": "Pervouchine"
+      },
+      {
+        "given": "Cricket A.",
+        "family": "Sloan"
+      },
+      {
+        "given": "Xintao",
+        "family": "Wei"
+      },
+      {
+        "given": "Lijun",
+        "family": "Zhan"
+      },
+      {
+        "given": "Rafael A.",
+        "family": "Irizarry"
+      }
+    ],
+    "container-title": "Genome Biology",
+    "language": "en",
+    "issued": {
+      "date-parts": [
+        [
+          2016,
+          4,
+          23
+        ]
+      ]
+    },
+    "URL": "https://doi.org/gfj2zz",
+    "container-title-short": "Genome Biol",
+    "PMCID": "PMC4842274",
+    "PMID": "27107712",
+    "id": "17EgWn4e7"
   },
   {
     "publisher": "Public Library of Science (PLoS)",

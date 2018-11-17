@@ -1,59 +1,120 @@
 {
-  "date": "October 25, 2018",
+  "date": "November 17, 2018",
   "authors": [
     {
+      "name": "Wouter Saelens *",
       "github": "zouter",
-      "name": "Wouter Saelens",
       "initials": "WS",
       "orcid": "0000-0002-7114-6248",
       "twitter": "zouters",
       "email": "wouter.saelens@gmail.com",
       "affiliations": [
-        "Ghent University"
+        "Data Mining and Modelling for Biomedicine, VIB Center for Inflammation Research, Ghent, Belgium",
+        "Department of Applied Mathematics, Computer Science and Statistics, Ghent University, Ghent, Belgium"
       ],
       "funders": "Fonds Wetenschappelijk Onderzoek",
       "affiliation_numbers": [
-        1
+        1,
+        2
       ]
     },
     {
-      "name": "Robrecht Cannoodt",
-      "affiliation_numbers": []
+      "name": "Robrecht Cannoodt *",
+      "github": "rcannood",
+      "initials": "RC",
+      "twitter": "rcannood",
+      "affiliations": [
+        "Data Mining and Modelling for Biomedicine, VIB Center for Inflammation Research, Ghent, Belgium",
+        "Department of Applied Mathematics, Computer Science and Statistics, Ghent University, Ghent, Belgium"
+      ],
+      "funders": "Fonds Wetenschappelijk Onderzoek",
+      "affiliation_numbers": [
+        1,
+        2
+      ]
     },
     {
       "name": "Lukas Weber",
-      "affiliation_numbers": []
+      "twitter": "lmwebr",
+      "affiliations": [
+        "Institute of Molecular Life Sciences, University of Zurich, Zurich, Switzerland",
+        "SIB Swiss Institute of Bioinformatics, University of Zurich, Zurich, Switzerland"
+      ],
+      "affiliation_numbers": [
+        3,
+        4
+      ]
     },
     {
       "name": "Charlotte Soneson",
-      "affiliation_numbers": []
+      "twitter": "CSoneson",
+      "affiliations": [
+        "Institute of Molecular Life Sciences, University of Zurich, Zurich, Switzerland",
+        "SIB Swiss Institute of Bioinformatics, University of Zurich, Zurich, Switzerland",
+        "Friedrich Miescher Institute for Biomedical Research, Basel, Switzerland"
+      ],
+      "affiliation_numbers": [
+        3,
+        4,
+        5
+      ]
     },
     {
-      "name": "Yvan Saeys",
-      "affiliation_numbers": []
+      "name": "Yvan Saeys *",
+      "affiliations": [
+        "Data Mining and Modelling for Biomedicine, VIB Center for Inflammation Research, Ghent, Belgium",
+        "Department of Applied Mathematics, Computer Science and Statistics, Ghent University, Ghent, Belgium"
+      ],
+      "affiliation_numbers": [
+        1,
+        2
+      ]
     },
     {
-      "name": "Mark D. Robinson",
-      "affiliation_numbers": []
+      "name": "Mark D. Robinson *",
+      "affiliations": [
+        "Institute of Molecular Life Sciences, University of Zurich, Zurich, Switzerland",
+        "SIB Swiss Institute of Bioinformatics, University of Zurich, Zurich, Switzerland"
+      ],
+      "affiliation_numbers": [
+        3,
+        4
+      ]
     }
   ],
   "affiliations": [
     {
-      "affiliation": "Ghent University",
+      "affiliation": "Data Mining and Modelling for Biomedicine, VIB Center for Inflammation Research, Ghent, Belgium",
       "affiliation_number": 1
+    },
+    {
+      "affiliation": "Department of Applied Mathematics, Computer Science and Statistics, Ghent University, Ghent, Belgium",
+      "affiliation_number": 2
+    },
+    {
+      "affiliation": "Institute of Molecular Life Sciences, University of Zurich, Zurich, Switzerland",
+      "affiliation_number": 3
+    },
+    {
+      "affiliation": "SIB Swiss Institute of Bioinformatics, University of Zurich, Zurich, Switzerland",
+      "affiliation_number": 4
+    },
+    {
+      "affiliation": "Friedrich Miescher Institute for Biomedical Research, Basel, Switzerland",
+      "affiliation_number": 5
     }
   ],
   "ci_source": {
     "repo_slug": "komparo/manuscript-workflow",
     "repo_owner": "komparo",
     "repo_name": "manuscript-workflow",
-    "commit": "cb72fabb97e971784b57bac4a44f506399144783"
+    "commit": "bbee2d56391aaa1700e480891d7582f475baa68a"
   },
   "manuscript_stats": {
     "reference_counts": {
-      "doi": 2,
-      "total": 2
+      "doi": 10,
+      "total": 10
     },
-    "word_count": 704
+    "word_count": 2386
   }
 }
