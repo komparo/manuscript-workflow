@@ -108,13 +108,13 @@
     "repo_slug": "komparo/manuscript-workflow",
     "repo_owner": "komparo",
     "repo_name": "manuscript-workflow",
-    "commit": "bbee2d56391aaa1700e480891d7582f475baa68a"
+    "commit": "df9eb62c9fd584accf982363fdb02f595b53f631"
   },
   "manuscript_stats": {
     "reference_counts": {
       "doi": 10,
       "total": 10
     },
-    "word_count": 2386
+    "word_count": 2618
   }
 }
