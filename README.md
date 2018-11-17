@@ -1,7 +1,7 @@
 # Output directory containing the formatted manuscript
 
 The [`gh-pages`](https://github.com/komparo/manuscript-workflow/tree/gh-pages) branch hosts the contents of this directory at https://komparo.github.io/manuscript-workflow/.
-The permalink for this webpage version is https://komparo.github.io/manuscript-workflow/v/bbee2d56391aaa1700e480891d7582f475baa68a/.
+The permalink for this webpage version is https://komparo.github.io/manuscript-workflow/v/df9eb62c9fd584accf982363fdb02f595b53f631/.
 To redirect to the permalink for the latest manuscript version at anytime, use the link https://komparo.github.io/manuscript-workflow/v/freeze/.
 
 ## Files
@@ -32,4 +32,4 @@ git add v/*/*.ots
 ## Source
 
 The manuscripts in this directory were built from
-[`bbee2d56391aaa1700e480891d7582f475baa68a`](https://github.com/komparo/manuscript-workflow/commit/bbee2d56391aaa1700e480891d7582f475baa68a).
+[`df9eb62c9fd584accf982363fdb02f595b53f631`](https://github.com/komparo/manuscript-workflow/commit/df9eb62c9fd584accf982363fdb02f595b53f631).
