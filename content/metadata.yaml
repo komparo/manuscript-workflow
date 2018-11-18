@@ -31,23 +31,28 @@ author_info:
   - 
     name: Lukas Weber
     twitter: lmwebr
+    initials: LW
     affiliations:
       - Institute of Molecular Life Sciences, University of Zurich, Zurich, Switzerland
       - SIB Swiss Institute of Bioinformatics, University of Zurich, Zurich, Switzerland
   - 
     name: Charlotte Soneson
     twitter: CSoneson
+    initials: CS
     affiliations:
       - Institute of Molecular Life Sciences, University of Zurich, Zurich, Switzerland
       - SIB Swiss Institute of Bioinformatics, University of Zurich, Zurich, Switzerland
       - Friedrich Miescher Institute for Biomedical Research, Basel, Switzerland
   -
     name: Yvan Saeys *
+    initials: YS
     affiliations:
       - Data Mining and Modelling for Biomedicine, VIB Center for Inflammation Research, Ghent, Belgium
       - Department of Applied Mathematics, Computer Science and Statistics, Ghent University, Ghent, Belgium
   - 
     name: Mark D. Robinson *
+    initials: MDR
+    twitter: markrobinsonca
     affiliations:
       - Institute of Molecular Life Sciences, University of Zurich, Zurich, Switzerland
       - SIB Swiss Institute of Bioinformatics, University of Zurich, Zurich, Switzerland
