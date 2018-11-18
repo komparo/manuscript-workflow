@@ -1,5 +1,5 @@
 {
-  "date": "November 17, 2018",
+  "date": "November 18, 2018",
   "authors": [
     {
       "name": "Wouter Saelens *",
@@ -36,6 +36,7 @@
     {
       "name": "Lukas Weber",
       "twitter": "lmwebr",
+      "initials": "LW",
       "affiliations": [
         "Institute of Molecular Life Sciences, University of Zurich, Zurich, Switzerland",
         "SIB Swiss Institute of Bioinformatics, University of Zurich, Zurich, Switzerland"
@@ -48,6 +49,7 @@
     {
       "name": "Charlotte Soneson",
       "twitter": "CSoneson",
+      "initials": "CS",
       "affiliations": [
         "Institute of Molecular Life Sciences, University of Zurich, Zurich, Switzerland",
         "SIB Swiss Institute of Bioinformatics, University of Zurich, Zurich, Switzerland",
@@ -61,6 +63,7 @@
     },
     {
       "name": "Yvan Saeys *",
+      "initials": "YS",
       "affiliations": [
         "Data Mining and Modelling for Biomedicine, VIB Center for Inflammation Research, Ghent, Belgium",
         "Department of Applied Mathematics, Computer Science and Statistics, Ghent University, Ghent, Belgium"
@@ -72,6 +75,8 @@
     },
     {
       "name": "Mark D. Robinson *",
+      "initials": "MDR",
+      "twitter": "markrobinsonca",
       "affiliations": [
         "Institute of Molecular Life Sciences, University of Zurich, Zurich, Switzerland",
         "SIB Swiss Institute of Bioinformatics, University of Zurich, Zurich, Switzerland"
@@ -108,13 +113,14 @@
     "repo_slug": "komparo/manuscript-workflow",
     "repo_owner": "komparo",
     "repo_name": "manuscript-workflow",
-    "commit": "df9eb62c9fd584accf982363fdb02f595b53f631"
+    "commit": "f77d5020cb8ca78ecb90d21bfa8c4248838421c6"
   },
   "manuscript_stats": {
     "reference_counts": {
-      "doi": 10,
-      "total": 10
+      "arxiv": 1,
+      "doi": 11,
+      "total": 12
     },
-    "word_count": 2618
+    "word_count": 3623
   }
 }

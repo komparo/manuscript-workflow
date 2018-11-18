@@ -1,5 +1,39 @@
 [
   {
+    "number": "1411.1607v4",
+    "version": "4",
+    "URL": "https://arxiv.org/abs/1411.1607v4",
+    "title": "Julia: A Fresh Approach to Numerical Computing",
+    "issued": {
+      "date-parts": [
+        [
+          2014,
+          11,
+          6
+        ]
+      ]
+    },
+    "author": [
+      {
+        "literal": "Jeff Bezanson"
+      },
+      {
+        "literal": "Alan Edelman"
+      },
+      {
+        "literal": "Stefan Karpinski"
+      },
+      {
+        "literal": "Viral B. Shah"
+      }
+    ],
+    "container-title": "arXiv",
+    "publisher": "arXiv",
+    "abstract": "Bridging cultures that have often been distant, Julia combines expertise from\nthe diverse fields of computer science and computational science to create a\nnew approach to numerical computing. Julia is designed to be easy and fast.\nJulia questions notions generally held as \"laws of nature\" by practitioners of\nnumerical computing:\n  1. High-level dynamic programs have to be slow.\n  2. One must prototype in one language and then rewrite in another language\nfor speed or deployment, and\n  3. There are parts of a system for the programmer, and other parts best left\nuntouched as they are built by the experts.\n  We introduce the Julia programming language and its design --- a dance\nbetween specialization and abstraction. Specialization allows for custom\ntreatment. Multiple dispatch, a technique from computer science, picks the\nright algorithm for the right circumstance. Abstraction, what good computation\nis really about, recognizes what remains the same after differences are\nstripped away. Abstractions in mathematics are captured as code through another\ntechnique from computer science, generic programming.\n  Julia shows that one can have machine performance without sacrificing human\nconvenience.",
+    "type": "report",
+    "id": "1B6CyO0CV"
+  },
+  {
     "publisher": "Wiley",
     "DOI": "10.1002/prot.25415",
     "type": "article-journal",
@@ -45,6 +79,40 @@
     "PMCID": "PMC5897042",
     "PMID": "29082672",
     "id": "bxALj0Vw"
+  },
+  {
+    "publisher": "Springer Nature",
+    "issue": "7572",
+    "DOI": "10.1038/526189a",
+    "type": "article-journal",
+    "page": "189-191",
+    "source": "Crossref",
+    "title": "Crowdsourced research: Many hands make tight work",
+    "volume": "526",
+    "author": [
+      {
+        "given": "Raphael",
+        "family": "Silberzahn"
+      },
+      {
+        "given": "Eric L.",
+        "family": "Uhlmann"
+      }
+    ],
+    "container-title": "Nature",
+    "issued": {
+      "date-parts": [
+        [
+          2015,
+          10,
+          7
+        ]
+      ]
+    },
+    "URL": "https://doi.org/gc4ntn",
+    "container-title-short": "Nature",
+    "PMID": "26450041",
+    "id": "YsUprDyN"
   },
   {
     "publisher": "Wiley",

@@ -10,7 +10,7 @@
   <meta name="author" content="Charlotte Soneson" />
   <meta name="author" content="Yvan Saeys *" />
   <meta name="author" content="Mark D. Robinson *" />
-  <meta name="dcterms.date" content="2018-11-17" />
+  <meta name="dcterms.date" content="2018-11-18" />
   <meta name="keywords" content="bioinformatics, methods, benchmarking, single-cell analysis" />
   <title>A workflow for continuous and collaborative benchmarking</title>
   <style type="text/css">
@@ -32,7 +32,7 @@
 <header id="title-block-header">
 <h1 class="title">A workflow for continuous and collaborative benchmarking</h1>
 </header>
-<p><small><em> This manuscript (<a href="https://komparo.github.io/manuscript-workflow/v/df9eb62c9fd584accf982363fdb02f595b53f631/">permalink</a>) was automatically generated from <a href="https://github.com/komparo/manuscript-workflow/tree/df9eb62c9fd584accf982363fdb02f595b53f631">komparo/manuscript-workflow@df9eb62</a> on November 17, 2018. </em></small></p>
+<p><small><em> This manuscript (<a href="https://komparo.github.io/manuscript-workflow/v/f77d5020cb8ca78ecb90d21bfa8c4248838421c6/">permalink</a>) was automatically generated from <a href="https://github.com/komparo/manuscript-workflow/tree/f77d5020cb8ca78ecb90d21bfa8c4248838421c6">komparo/manuscript-workflow@f77d502</a> on November 18, 2018. </em></small></p>
 <h2 id="authors">Authors</h2>
 <ul>
 <li><p><strong>Wouter Saelens </strong>*<br> <img src="images/orcid.svg" alt="ORCID icon" width="13" height="13" /> <a href="https://orcid.org/0000-0002-7114-6248">0000-0002-7114-6248</a> · <img src="images/github.svg" alt="GitHub icon" width="13" height="13" /> <a href="https://github.com/zouter">zouter</a> · <img src="images/twitter.svg" alt="Twitter icon" width="13" height="13" /> <a href="https://twitter.com/zouters">zouters</a><br> <small> Data Mining and Modelling for Biomedicine, VIB Center for Inflammation Research, Ghent, Belgium; Department of Applied Mathematics, Computer Science and Statistics, Ghent University, Ghent, Belgium · Funded by Fonds Wetenschappelijk Onderzoek </small></p></li>
@@ -40,10 +40,10 @@
 <li><p><strong>Lukas Weber</strong><br> · <img src="images/twitter.svg" alt="Twitter icon" width="13" height="13" /> <a href="https://twitter.com/lmwebr">lmwebr</a><br> <small> Institute of Molecular Life Sciences, University of Zurich, Zurich, Switzerland; SIB Swiss Institute of Bioinformatics, University of Zurich, Zurich, Switzerland </small></p></li>
 <li><p><strong>Charlotte Soneson</strong><br> · <img src="images/twitter.svg" alt="Twitter icon" width="13" height="13" /> <a href="https://twitter.com/CSoneson">CSoneson</a><br> <small> Institute of Molecular Life Sciences, University of Zurich, Zurich, Switzerland; SIB Swiss Institute of Bioinformatics, University of Zurich, Zurich, Switzerland; Friedrich Miescher Institute for Biomedical Research, Basel, Switzerland </small></p></li>
 <li><p><strong>Yvan Saeys </strong>*<br><br> <small> Data Mining and Modelling for Biomedicine, VIB Center for Inflammation Research, Ghent, Belgium; Department of Applied Mathematics, Computer Science and Statistics, Ghent University, Ghent, Belgium </small></p></li>
-<li><p><strong>Mark D. Robinson </strong>*<br><br> <small> Institute of Molecular Life Sciences, University of Zurich, Zurich, Switzerland; SIB Swiss Institute of Bioinformatics, University of Zurich, Zurich, Switzerland </small></p></li>
+<li><p><strong>Mark D. Robinson </strong>*<br> · <img src="images/twitter.svg" alt="Twitter icon" width="13" height="13" /> <a href="https://twitter.com/markrobinsonca">markrobinsonca</a><br> <small> Institute of Molecular Life Sciences, University of Zurich, Zurich, Switzerland; SIB Swiss Institute of Bioinformatics, University of Zurich, Zurich, Switzerland </small></p></li>
 </ul>
 <h2 id="abstract" class="page_break_before">Abstract</h2>
-<p>Benchmarking is a critical step in the development of bioinformatics tools, but the way benchmarking is done at the moment has some limitations. Because each benchmark is developed in isolation, they tend to be hard to compare, extend and are rapidly outdated. Moreover, benchmarks are usually rapidily outdated as new methods are developed. To address these challenges, we combined modern software development tools to create a workflow for continuous and collaborative benchmarking. The structure of the benchmark is highly modular, so that anyone can contribute a set of datasets, metrics, methods or interprete the results, and get credit for their contributions. We apply this worklow on an emerging type of analysis in the single-cell field: trajectory differential expression, available at <a href="https://github.com/komparo/tde">https://github.com/komparo/tde</a>. A skeleton version of the workflow, which can be used to create a similar benchmarking workflow for a different type of methods, can be found at <a href="https://github.com/komparo/skeleton">https://github.com/komparo/skeleton</a>.</p>
+<p>Benchmarking is a critical step in the development of bioinformatics tools, but the way benchmarking is done at the moment has some limitations. Because each benchmark is developed in isolation, they tend to be hard to compare, extend and are rapidly outdated. Moreover, benchmarks are usually rapidily outdated as new methods are developed. To address these challenges, we combined modern software development tools to create a workflow for continuous and collaborative benchmarking. The structure of the benchmark is highly modular, so that anyone can contribute a set of datasets, metrics, methods or interprete the results, and get credit for their contributions. As a test case, we applied this worklow on an emerging type of analysis in the single-cell field: trajectory differential expression, available at <a href="https://github.com/komparo/tde">https://github.com/komparo/tde</a>. A skeleton version of the workflow, which can be used to create a similar benchmarking workflow for a different type of methods, can be found at <a href="https://github.com/komparo/skeleton">https://github.com/komparo/skeleton</a>.</p>
 <h2 id="introduction">Introduction</h2>
 <!-- Benchmarking ---------------------------------------------------------------------------------------------------->
 <p>Evaluating the performance of a new method, and comparing it to the state-of-the-art, is a critical step in the development of bioinformatics methods. Benchmarks are essential to showcase the advantages and weaknesses of a method, and assure that new tools improve upon related methods. Despite this, well-designed and balanced benchmarking strategy can be difficult to create, especially when a ground truth on real data is not available.</p>
@@ -58,7 +58,7 @@
 <li>Independent benchmarks are usually published quite late, only after a lot of methods are already available.</li>
 <li>Companion benchmarks represent in some way a lot of wasted effort, because datasets are often reanalysed, metrics reimplemented, and methods rewrapped.</li>
 </ul>
-<!--- 
+<!---
 Only the most relevant limitations are discussed here, others:
 
 * Easy to overfit on what is available / ideas of the benchmarker. Examples include the Trapnell trajectory datasets, MINST dataset, but there are several others to be found. At the same time, it is also useful to only have a limited number of "reference" datasets available, to make it easier to develop new methods, so this makes this limitation somewhat controversial. In any case, the datasets should be a good representation of what the method should find "in the wild".
@@ -68,21 +68,22 @@ Only the most relevant limitations are discussed here, others:
 <!-- Goals  --------------------------------------------------------------------------------------------------------------->
 <p>To resolve these issues, we created a workflow for benchmarking which centers around the following three core concepts:</p>
 <ul>
-<li><strong>Modular</strong>: It should be possible to extend the benchmark simply by adding a self-contained “module”. Such a module could be: a dataset generator, a method, a set of metrics, or a report generator that interpretes the metrics and produces a report. Several tools exist already for making benchmarks modular: SummarizedBenchmark <span class="citation" data-cites="Yqv1RKnE">[<a href="#ref-Yqv1RKnE">1</a>]</span>, <a href="https://github.com/stephens999/dscr">Dynamic Statistical Comparisons</a> and iCOBRA <span class="citation" data-cites="Bqyk8BrN">[<a href="#ref-Bqyk8BrN">2</a>]</span>. <!--- TODO #1 ---></li>
+<li><strong>Modular</strong>: It should be possible to extend the benchmark simply by adding a self-contained “module”. Such a module could be: a dataset generator, a method, a set of metrics, or a report generator that interpretes the results and produces a report. Several tools exist already for making benchmarks modular: SummarizedBenchmark <span class="citation" data-cites="Yqv1RKnE">[<a href="#ref-Yqv1RKnE">1</a>]</span>, <a href="https://github.com/stephens999/dscr">Dynamic Statistical Comparisons</a> and iCOBRA <span class="citation" data-cites="Bqyk8BrN">[<a href="#ref-Bqyk8BrN">2</a>]</span>. <!--- TODO #1 ---></li>
 <li><strong>Collaborative</strong>: Anyone with a computer and internet connection should be able to run and contribute to the benchmark. This can range from contributing a module, to changing the structure of the benchmark itself. Discussions on the benchmark or any of the reports should also be open. The collaborative aspect of benchmarking has usually focused on the level of methods, with countless competitions and challenges, such as those organised by <a href="http://dreamchallenges.org/">DREAM</a> or <a href="https://www.kaggle.com/">kaggle</a>.</li>
 <li><strong>Continuous</strong>: A benchmark should be continously updated when new modules are added. This has quite a long history in bioinformatics, particularly in structure prediction <span class="citation" data-cites="bxALj0Vw">[<a href="#ref-bxALj0Vw">3</a>]</span>, but also in other fields <span class="citation" data-cites="17EgWn4e7">[<a href="#ref-17EgWn4e7">4</a>]</span>. <!---- TODO #2 ----></li>
 </ul>
 <p>To construct a workflow which fulfills combines these three concepts, we used several ideas and tools coming from modern software development, such as continuous integration, containerisation and workflow management.</p>
 <!-- General overview ------------------------------------------------------------------------------------------------------->
-<p>The overall structure uses several different <strong>types of modules</strong>: dataset generators can generate datasets and optionally use another dataset as input, methods use a dataset to generate some model, metrics will calculate some scores using the model and optionally also parts of the dataset, and finally a report generator which summarise the datasets, models and scores into a report. Each type of module can generate a set of files which are constrained to a particular set of <strong>formats</strong>. Each format has an unambiguous description, a set of good and bad examples, and includes a validator which validates the output files generated by each module. While each format is defined beforehand, new formats can be added over time as the field progresses. A <strong>module</strong> is a set of scripts and packages, which are run inside a portable environment. This module is put under version control, shared on a code sharing platform, and tested automatically using continuous integration. When all tests of a module are succesful, these modules can be integrated into the actual <strong>benchmarking workflow</strong>. Within this workflow, modules are connected through a particular design, which is executed using a workflow manager. The output of the benchmark are a set of reports and apps, which are made available through a publishing platforms. To add a new module, a pull request is created to integrate the module within the benchmarking workflow, after which the contribution is reviewed openly. When accepted, the module is automatically integrated within the workflow, and the necessary parts of the workflow are re-executed. Finally, in regular time intervals (e.g. monthly), the full set of reports and apps are gathered and versioned.</p>
+<p>In brief, our workflow is structured as follows. We define several different <strong>types of modules</strong> (Figure <a href="#fig:overview">1</a>a): dataset generators can generate datasets and optionally use another dataset as input, methods use a dataset to generate some model, metrics will calculate some scores using the model and optionally also parts of the dataset, and finally a report generator which summarise the datasets, models and scores into a report. Each type of module can generate a set of files which are constrained to a particular set of <strong>formats</strong> (Figure <a href="#fig:overview">1</a>b). Each format has an unambiguous description, a set of good and bad examples, and includes a validator which validates the output files generated by each module. While each format is defined beforehand, new formats can be added over time as the field progresses. A <strong>module</strong> (Figure <a href="#fig:overview">1</a>c) is a set of scripts and packages, which are run inside a portable environment. This module is put under version control, shared on a code sharing platform, and tested automatically using continuous integration. When all tests of a module are succesful, these modules can be integrated into the actual <strong>benchmarking workflow</strong> (Figure <a href="#fig:overview">1</a>d). Within this workflow, modules are connected through a particular design, which is executed using a workflow manager. The output of the benchmark are a set of reports and apps, which are made available through a publishing platforms. To add a new module, a pull request is created to integrate the module within the benchmarking workflow, after which the contribution is reviewed openly. When accepted, the module is automatically integrated within the workflow, and the necessary parts of the workflow are re-executed. Finally, in regular time intervals (e.g. monthly), the full set of reports and apps are gathered and versioned.</p>
 <!-- Test case ------------------------------------------------------------------------------------------------------------->
 <p>As a test case, we developed a proof-of-concept benchmark for single-cell trajectory differential expression (TDE) methods. TDE methods try to find genes which are differentially expressed along a trajectory, the latter of which is an positioning of cells along a graph structure. Given that only a few of such methods have been developed yet <span class="citation" data-cites="13yVWlTc9 HkU0XKEf 16zLRyIvX">[<a href="#ref-13yVWlTc9">5</a>,<a href="#ref-HkU0XKEf">6</a>,<a href="#ref-16zLRyIvX">7</a>]</span>, this is the ideal scenario for developing the idea of a continuous and collaborative benchmark, and try to find solutions to the inevitable challenges which will come up as the field develops.</p>
-<p>We will further discuss each element of the workflow in detail, along with how we currently implemented it in practice. It is important to acknowledge here that this is only one possible implementation, and that other tools, some of which still have to be developed, could better fit the benchmarking usecase. In the end, what is the most important are not the way a benchmark is implemented, but the ideas behind its implementation.</p>
+<p>We will further discuss each element of the workflow in detail, along with how we currently implemented it in practice. It is important to acknowledge here that this is only one possible implementation, and that other tools, some of which still have to be developed, could better fit the benchmarking use-case. What is the most important is not the way the benchmark is implemented, but the ideas behind its implementation.</p>
 <figure>
-<img src="images/pipeline.png" alt="Figure 1: The pipeline." id="fig:pipeline" style="width:100.0%" /><figcaption><span>Figure 1:</span> The pipeline.</figcaption>
+<img src="images/pipeline.png" alt="Figure 1: The pipeline." id="fig:overview" style="width:100.0%" /><figcaption><span>Figure 1:</span> The pipeline.</figcaption>
 </figure>
 <h2 id="data-formats">Data formats</h2>
 <p>The basis of any collaborative effort in computation biology is agreeing on how data will be interchanged, and benchmarking is no exception. Sometimes, the differences between data formats can be minor, for example whether the samples within a gene expression matrix are put in the rows or in the column. In other cases, different data formats can have a significant impact on storage and/or the speed by which the data can be processed. <!--- TODO #3 ---></p>
+<p>In the benchmarking workflow presented here, a format represents how a particular part of a dataset, model, score or report should be represented on disk.</p>
 <h3 id="what-a-format-entails">What a format entails</h3>
 <!-- Description ------------------------------------------------------------------------------------------------------------->
 <p>For a format to be useful, it should have an unambiguous description. In this way, someone developing a module can be sure how the inputs look like, even if these inputs do not exist yet, and can also be sure that the outputs will be useful as input for other modules.</p>
@@ -94,16 +95,31 @@ Only the most relevant limitations are discussed here, others:
 <p>Usually, the most optimal representation of a dataset or the output of a method only becomes apparent when several methods have been developed already. This means that any effort to make a benchmark collaborative and continuous should strive to make its data formats flexible. Flexibility can take several forms. New features could be added to the format, without invalidating the old data and modules. When this is not an option, new formats could be added alongside the old. When applicable, converters should then be written which convert the old formats into the new, so that old modules keep on functioning. Finally, in some extreme cases, old formats could be invalidated and replaced with new formats, which would require some versioning system to make sure modules are run on the version of the formats they were developed.</p>
 <p>It is inevitable that disagreements about data representation will pop up in a collaborative effort. But in any case, having common formats, even if they are suboptimal for certain use cases, is usually better then having none at all.</p>
 <h3 id="test-case">Test case</h3>
-<p>For the TDE use case, to keep the formats simple and accesible, we decided to mainly use text-based formats such as comma-separated values (CSV) and JSON files, as these can be rapidly parsed in almost any programming language. For each format, we wrote custom validators in R, although JSON files were also partly validated using a json schema validator (ajv, <a href="https://ajv.js.org/">https://ajv.js.org/</a>). These validators are available as an R package (<a href="https://github.com/komparo/tde_formats">https://github.com/komparo/tde_formats</a>). For each format, we wrote a description and several examples, which are shown together in the contributor’s guide (<a href="https://komparo.github.io/tde/formats.html">https://komparo.github.io/tde/formats.html</a>).</p>
+<p>For the TDE use case, to keep the formats simple and accesible, we decided to mainly use text-based formats such as comma-separated values (CSV) and JSON files, as these can be rapidly parsed in almost any programming language. For each format, we wrote custom validators in R, although JSON files were also partly validated using a json schema validator (ajv, <a href="https://ajv.js.org/">https://ajv.js.org/</a>). These validators are available as an R package (<a href="https://github.com/komparo/tde_formats">https://github.com/komparo/tde_formats</a>). For each format, we also wrote a description and several examples, which are shown together in the contributor’s guide (<a href="https://komparo.github.io/tde/formats.html">https://komparo.github.io/tde/formats.html</a>).</p>
+<p>To represent a dataset and a model, we needed to define several formats grouped within three categories:</p>
+<ul>
+<li>Single-cell expression datasets: This is relatively straightforward, given that the sheer number of single-cell RNA-seq tools available. As is commonly done, we represent the dataset as a matrix, together with two tables containing the metadata of the cells and features respectively.</li>
+<li>Trajectory: This is more difficult, given the vast diversity in outputs of trajectory inference methods. In our recent benchmarking of these methods, we already created a common format for trajectories, and included this format in this benchmark as well. However, as we also acknowledge in that study, alternative formats may be possible.</li>
+<li>Trajectory differential expression: This is the the most difficult, because we had to make some educated guesses about how we expect the field to progress. While it impossible to know beforehand what formats will be ultimately needed, we can at least try to already predict for them. Based on what is already done by some existing methods, we defined several types of trajectory differential expression such as oscillatory (within a cyclical trajectory), pseudotime (expression that changes along pseudotime), and branch point (expression that happens at a particular branch point). We extended this with some other types of differential expression, such as local (changes in expression at a particular point of the trajectory) and overall (changes in expression anywhere in the trajectory). Each kind of differential expression is represented in a table format, where each differential expression event is represented in a row which can contain information on the associated p-value, a ranking and/or effect size.</li>
+</ul>
+<p>Scores and reports have less requirements regarding the formats. The most simplest format to represent a score is as an atomic value, in which each model can be summarized by one quantitave or qualitative value. Of course, more complex score formats are also possible. For reports, we included two formats. A static report with at least an index HTML or markdown file, together with any extra assets such as figures. A dynamic report on the other hand produces a software container which expose a web app through a port on execution.</p>
 <h2 id="module-types">Module types</h2>
+<p>In the benchmarking workflow, we define four types of modules. In our experience, these four modules are in most cases enough to construct a fully comprehensive benchmark of certain group of methods.</p>
+<h3 id="dataset-generators">Dataset generators</h3>
+<p>This module will generate a dataset, which can from very simple “toy” data, synthetic data which try to mimic the characteristics of real data as best as possible, or real datasets. Optionally, a dataset generator can also use another dataset as input, for example when generating some synthetic data based on some real data. Only rarely will a dataset generator contain some primary data itself. Rather, data should be gathered directly from primary sources, for example using APIs by various databases or by downloading the data directly from data management systems such as Zenodo or Figshare.</p>
+<p>Within the TDE test case, we included</p>
+<h3 id="methods">Methods</h3>
+<p>A method module reads in (parts) of a dataset, and uses this to generate a model. Some special types of methods can be helpful to include at the start of a benchmark. Positive controls, for example a method that simply return the reference model of the dataset, and negative controls, for example a method which generate a random model, could be useful to make sure the metrics work correctly. <em>Off-the-shelf</em> methods, methods that can be easily implemented with just a few lines of code, could be helpful as a baseline to other methods and to assess the difficulty of particular datasets.</p>
+<h3 id="metrics">Metrics</h3>
+<p>Metric modules score the output of a model. Some metrics assess the accuracy of a model by comparing it with some reference model present in the dataset. Others will look at the resources consumed by the method, such as CPU time and memory, to assess its scalability. Models can also be compared to other models, for example to examine the stability of a method. Finally, some qualitative metrics can also be defined here, for example those that look at the usability of a method.</p>
+<h3 id="report-generators">Report generators</h3>
+<p>In the end, the scores are aggregated and interpreted using a report generator. This modules generates a report which can be static, such as a markdown document with some figures, or dynamic in the form of a web application. By crowdsourcing the interpretation of the benchmark in this way, it would become much less authorative and instead promote open discussion in the field <span class="citation" data-cites="YsUprDyN">[<a href="#ref-YsUprDyN">8</a>]</span>. It might certainly happen that different reports would contain contradicting results, but because each reports starts from the same set of data, it would be immediatly clear why the conclusions differ. For example, there might be subtle differences in how the scores have been averaged. Or, a report may only have focused on only a subset of the dataset which the authors found the most relevant for their method.</p>
 <h2 id="modules">Modules</h2>
-<p>Our pipeline consists of several “modules”, which are integrated and connected to ultimately produce a full crowd-sourced benchmarking pipeline. These modules contain the code to generate some datasets, run a method and compare the output. Moreover, to assure a balanced interpretation of the results, report modules will aggregate and summarise the results, and provide some interpretation.</p>
-<p>While the idea of creating a more modular benchmarking workflow is not new (SummarizedBenchmark <span class="citation" data-cites="Yqv1RKnE">[<a href="#ref-Yqv1RKnE">1</a>]</span> and Dynamic Statistical Comparisons, https://github.com/stephenslab/dsc)</p>
-<p>A module also contains several other components which are in our view necessary to make the workflow easily extendable.</p>
-<h3 id="scripts-and-packages">Scripts and packages</h3>
-<p>A very varied set of programming languages used in bioinformatics, even within particular a particular subfield (such as single-cell bioinformatics <span class="citation" data-cites="ekkzy8ZR">[<a href="#ref-ekkzy8ZR">8</a>]</span>). A collaborative workflow should therefore avoid a “lock-in” to a particular language.</p>
-<h3 id="portable-environment">Portable environment</h3>
-<h3 id="pipeline-manager">Pipeline manager</h3>
+<h3 id="scripts-packages-and-a-portable-environment">Scripts, packages and a portable environment</h3>
+<p>A module needs to contain at least one script, which will read in the input data, process it in some way, and ultimately write the output data in the correct format.</p>
+<p>Given the large diversity of programming languages used in computation biology, a collaborative benchmarking effort should try to avoid imposing limits on the kind of programming languages that can be used. As an example, the single-cell analysis field is split between tools written for R and Python <span class="citation" data-cites="ekkzy8ZR">[<a href="#ref-ekkzy8ZR">9</a>]</span>, and choosing one of these two would therefore alienate a signficant part of the field. Moreover, a collaborative effort should also be open for new languages such as Julia <span class="citation" data-cites="1B6CyO0CV">[<a href="#ref-1B6CyO0CV">10</a>]</span>, which could be more powerful and developer friendly for certain use cases.</p>
+<p>Apart from being language agnostic, the execution of a module should also happen on any computer in exactly the same way. To make the execution reproducible, we therefore require that a module defines a portable environment, which contains the necessary operating system, language interpreters and other packages to execute the code within the module. An environment can be portable on many levels: within one programming language such as virtualenv for python or packrat for R or across languages using package managers such as Conda. The most complete level of reproducibility can be obtained by working at the level of the operating system, through container systems such as docker or singularity. Finally, to be able execute stochastic code in a reproducible manner, it is also necessary to fix the pseudo-random number generator in some way, for example by setting an a priori defined seed through R or numpy.</p>
+<h3 id="module-metadata">Module metadata</h3>
 <ul>
 <li>Provides an interface between different modules</li>
 <li>Controls reproducible execution of the scripts within the environment</li>
@@ -118,9 +134,21 @@ Only the most relevant limitations are discussed here, others:
 <li>Also crucial for collaborating</li>
 </ul>
 <h3 id="code-sharing-platform">Code sharing platform</h3>
-<p>Code sharing is more than a place to deposit code: - Create issues - Create pull requests - Versioning the code</p>
+<p>Code sharing is more than a place to deposit code:</p>
+<ul>
+<li>Create issues</li>
+<li>Create pull requests</li>
+<li>Versioning the code</li>
+</ul>
 <h3 id="automated-testing-and-continuous-integration">Automated testing and continuous integration</h3>
-<p>Testing a module: - Checks the modules content, e.g. if the metadata is complete - Checks whether it fullfills the requirement for this module, e.g. if it wil generate the required outputs - Tests whether it can be loaded - Tests whether it can be run using small input data - Validates the produced output</p>
+<p>Testing a module:</p>
+<ul>
+<li>Checks the modules content, e.g. if the metadata is complete</li>
+<li>Checks whether it fullfills the requirement for this module, e.g. if it wil generate the required outputs</li>
+<li>Tests whether it can be loaded</li>
+<li>Tests whether it can be run using small input data</li>
+<li>Validates the produced output</li>
+</ul>
 <p>While continuous integration for every module can sound like overdoing it, 90% of the errors are caught here. For small benchmarks, it is overkill, for large benchmarks, it is indispensible for maintainability</p>
 <h3 id="environment-registry">Environment registry</h3>
 <ul>
@@ -128,12 +156,13 @@ Only the most relevant limitations are discussed here, others:
 </ul>
 <h2 id="combining-modules-within-a-benchmark">Combining modules within a benchmark</h2>
 <h3 id="combining-modules">Combining modules</h3>
-<h3 id="pipeline-manager-1">Pipeline manager</h3>
+<h3 id="pipeline-manager">Pipeline manager</h3>
 <h3 id="execution">Execution</h3>
 <h3 id="continuous-publishing">Continuous publishing</h3>
 <h3 id="adding-or-updating-a-module">Adding or updating a module</h3>
 <h3 id="continuous-integration">Continuous integration</h3>
 <h3 id="versioning">Versioning</h3>
+<h2 id="organisation">Organisation</h2>
 <h2 id="outlook">Outlook</h2>
 <p>The project as it stands now is meant to be a proof-of-concept. Technologies, and the companies and communities building them, come and go, and the tools we used for this benchmark will almost certainly feel outdated in a couple of years. The crucial point is not which tools are used, but what advantages they provide for the community: a portable environment, a reproducible workflow, a way to collaboratively design a benchmark, and ultimately a more democratic view of the field and its challenges lying ahead.</p>
 <p>In the ideal case, a continuous benchmarking project should be supported by a larger consortium, such as the Human Cell Atlas, which would not only assure its continuity, but would also provide infrastructure support. In particular, services which have strong requirements on the side of storage and/or computing power would benefit from this, such as continuous integration, the environment registry, and the execution cluster.</p>
@@ -142,7 +171,7 @@ Only the most relevant limitations are discussed here, others:
 <h3 id="reports-as-a-forum">Reports as a forum</h3>
 <ul>
 <li>Discuss multiple possible interpretations</li>
-<li>Self-assessment trap <span class="citation" data-cites="9jjMfS7z">[<a href="#ref-9jjMfS7z">9</a>]</span></li>
+<li>Self-assessment trap <span class="citation" data-cites="9jjMfS7z">[<a href="#ref-9jjMfS7z">11</a>]</span></li>
 </ul>
 <h2 id="references" class="page_break_before">References</h2>
 <!-- Explicitly insert bibliography here -->
@@ -189,14 +218,25 @@ Xiaojie Qiu, Qi Mao, Ying Tang, Li Wang, Raghav Chawla, Hannah A Pliner, Cole Tr
 <em>Nature Methods</em> (2017-08-21) <a href="https://doi.org/gc5v2g">https://doi.org/gc5v2g</a><br />
 DOI: <a href="https://doi.org/10.1038/nmeth.4402">10.1038/nmeth.4402</a> · PMID: <a href="http://www.ncbi.nlm.nih.gov/pubmed/28825705">28825705</a> · PMCID: <a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC5764547">PMC5764547</a></p>
 </div>
+<div id="ref-YsUprDyN">
+<p>8. <strong>Crowdsourced research: Many hands make tight work</strong><br />
+Raphael Silberzahn, Eric L. Uhlmann<br />
+<em>Nature</em> (2015-10-07) <a href="https://doi.org/gc4ntn">https://doi.org/gc4ntn</a><br />
+DOI: <a href="https://doi.org/10.1038/526189a">10.1038/526189a</a> · PMID: <a href="http://www.ncbi.nlm.nih.gov/pubmed/26450041">26450041</a></p>
+</div>
 <div id="ref-ekkzy8ZR">
-<p>8. <strong>Exploring the single-cell RNA-seq analysis landscape with the scRNA-tools database</strong><br />
+<p>9. <strong>Exploring the single-cell RNA-seq analysis landscape with the scRNA-tools database</strong><br />
 Luke Zappia, Belinda Phipson, Alicia Oshlack<br />
 <em>PLOS Computational Biology</em> (2018-06-25) <a href="https://doi.org/gdqcjz">https://doi.org/gdqcjz</a><br />
 DOI: <a href="https://doi.org/10.1371/journal.pcbi.1006245">10.1371/journal.pcbi.1006245</a> · PMID: <a href="http://www.ncbi.nlm.nih.gov/pubmed/29939984">29939984</a> · PMCID: <a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC6034903">PMC6034903</a></p>
 </div>
+<div id="ref-1B6CyO0CV">
+<p>10. <strong>Julia: A Fresh Approach to Numerical Computing</strong><br />
+Jeff Bezanson, Alan Edelman, Stefan Karpinski, Viral B. Shah<br />
+<em>arXiv</em> (2014-11-06) <a href="https://arxiv.org/abs/1411.1607v4">https://arxiv.org/abs/1411.1607v4</a></p>
+</div>
 <div id="ref-9jjMfS7z">
-<p>9. <strong>The self-assessment trap: can we all be better than average?</strong><br />
+<p>11. <strong>The self-assessment trap: can we all be better than average?</strong><br />
 R. Norel, J. J. Rice, G. Stolovitzky<br />
 <em>Molecular Systems Biology</em> (2014-04-16) <a href="https://doi.org/bxxmvz">https://doi.org/bxxmvz</a><br />
 DOI: <a href="https://doi.org/10.1038/msb.2011.70">10.1038/msb.2011.70</a> · PMID: <a href="http://www.ncbi.nlm.nih.gov/pubmed/21988833">21988833</a> · PMCID: <a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3261704">PMC3261704</a></p>
