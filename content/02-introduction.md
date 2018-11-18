@@ -17,7 +17,7 @@ While benchmarks are unmistakingly important, the way benchmarking is usually do
 * Independent benchmarks are usually published quite late, only after a lot of methods are already available.
 * Companion benchmarks represent in some way a lot of wasted effort, because datasets are often reanalysed, metrics reimplemented, and methods rewrapped.
 
-<!--- 
+<!---
 Only the most relevant limitations are discussed here, others:
 
 * Easy to overfit on what is available / ideas of the benchmarker. Examples include the Trapnell trajectory datasets, MINST dataset, but there are several others to be found. At the same time, it is also useful to only have a limited number of "reference" datasets available, to make it easier to develop new methods, so this makes this limitation somewhat controversial. In any case, the datasets should be a good representation of what the method should find "in the wild".
@@ -29,7 +29,7 @@ Only the most relevant limitations are discussed here, others:
 
 To resolve these issues, we created a workflow for benchmarking which centers around the following three core concepts:
 
-* **Modular**: It should be possible to extend the benchmark simply by adding a self-contained "module". Such a module could be: a dataset generator, a method, a set of metrics, or a report generator that interpretes the metrics and produces a report. Several tools exist already for making benchmarks modular: SummarizedBenchmark [@doi:10.1093/bioinformatics/bty627], [Dynamic Statistical Comparisons](https://github.com/stephens999/dscr) and iCOBRA [@doi:10.1038/nmeth.3805]. <!--- TODO #1 --->
+* **Modular**: It should be possible to extend the benchmark simply by adding a self-contained "module". Such a module could be: a dataset generator, a method, a set of metrics, or a report generator that interpretes the results and produces a report. Several tools exist already for making benchmarks modular: SummarizedBenchmark [@doi:10.1093/bioinformatics/bty627], [Dynamic Statistical Comparisons](https://github.com/stephens999/dscr) and iCOBRA [@doi:10.1038/nmeth.3805]. <!--- TODO #1 --->
 * **Collaborative**: Anyone with a computer and internet connection should be able to run and contribute to the benchmark. This can range from contributing a module, to changing the structure of the benchmark itself. Discussions on the benchmark or any of the reports should also be open. The collaborative aspect of benchmarking has usually focused on the level of methods, with countless competitions and challenges, such as those organised by [DREAM](http://dreamchallenges.org/) or [kaggle](https://www.kaggle.com/).
 * **Continuous**: A benchmark should be continously updated when new modules are added. This has quite a long history in bioinformatics, particularly in structure prediction [@doi:10.1002/prot.25415], but also in other fields [@doi:10.1186/s13059-016-0940-1]. <!---- TODO #2 ---->
 
