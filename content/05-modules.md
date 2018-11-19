@@ -12,22 +12,10 @@ A module also contains metadata, which lists the requirements to run the method 
 
 ### Version control and code sharing
 
-We require that the complete module, including the portable environment and metadata, is placed under version control so that any changes can be track. The module is then shared on a code sharing platform, which makes it possible for other contributors and maintainrs of the benchmark to file issues on the module, request some changes to the code through pull requests, and create a modifications if the license allows it. In our workflow, we use git for version control and GitHub as the platform to share modules, although it should be noted that powerful variants of the latter exist, including self-hosted ones.
+We require that the complete module, including the portable environment and metadata, is placed under version control so that any changes are tracked. The module is then shared on a code sharing platform, which makes it possible for other module authors and maintainers of the benchmark to file issues on the module, request some changes to the code through pull requests, and create a modifications if the license allows it. In our workflow, we use git for version control and GitHub as the platform to share modules, although it should be noted that powerful variants of the latter exist, including self-hosted ones.
 
 ### Continuous integration
 
-To keep the development of a module and the whole benchmark maintainable, it is important that the code is automatically tested and validated. This 
+To keep the development of a module and benchmark maintainable, it is important that each element of the module is automatically tested and validated. In this way, many errors are catched early, before they can impact other modules in the benchmark. Including automated testing also reduces the burden for those reviewing the modules. This crosstalk between automated testing and manual reviewing is already commonplace in many package repositories, such as CRAN and Bioconductor.
 
-Testing a module:
-
-- Checks the modules content, e.g. if the metadata is complete
-- Checks whether it fullfills the requirement for this module, e.g. if it wil generate the required outputs
-- Tests whether it can be loaded
-- Tests whether it can be run using small input data
-- Validates the produced output
-
-While continuous integration for every module can sound like overdoing it, 90% of the errors are caught here. For small benchmarks, it is overkill, for large benchmarks, it is indispensible for maintainability
-
-### Environment registry
-
-- Easily downloadable by anyone wanting to replicate the environment
+In our proposed workflow, we automatically trigger a new test on [travis-ci.com](https://www.travis-ci.com), which is free for open-source projects. We test each module on several levels. We first check whether it contains all required content, and whether the metadata is complete. Next, we activate the portable environment, run the module on some small input data, and validate the produced output. If any of these steps fail, the author is notified. Only when tests are sucessful can the new module be integrated into the whole benchmark procedure.
