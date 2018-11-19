@@ -1,14 +1,7 @@
 ## Outlook
 
-The project as it stands now is meant to be a proof-of-concept. Technologies, and the companies and communities building them, come and go, and the tools we used for this benchmark will almost certainly feel outdated in a couple of years. The crucial point is not which tools are used, but what advantages they provide for the community: a portable environment, a reproducible workflow, a way to collaboratively design a benchmark, and ultimately a more democratic view of the field and its challenges lying ahead.
+Continuous and collaborative benchmarking provides an alternative and powerful way to evaluate methods in computational biology. It relies heavily on modularisation and tools from software development, which make it possible to design a benchmarking strategy that can be easily extended by anyone, while still allowing for open discussion to exist in a field. Because less effort is spend developing new benchmarking workflows for every new method, this workflow would speed up method development in bioinformatics. Because the results of the benchmark can be easily interpreted by anyone, it would also avoid other issues such as the self-assessment trap [@doi:10.1038/msb.2011.70].
 
-In the ideal case, a continuous benchmarking project should be supported by a larger consortium, such as the Human Cell Atlas, which would not only assure its continuity, but would also provide infrastructure support. In particular, services which have strong requirements on the side of storage and/or computing power would benefit from this, such as continuous integration, the environment registry, and the execution cluster.
+We created both a case study of the workflow [https://github.com/komparo/tde](https://github.com/komparo/tde), and a skeleton version which provides instructions on how to set up the workflow [https://github.com/komparo/tde](https://github.com/komparo/tde). Of course, as technologies and the communities building them come and go, the tools we used for this benchmark will almost certainly be replaced by more powerful tools soon. The crucial point is not which tools that are used, but what advantages they provide for the community: a portable environment, a reproducible workflow and a set of tools to collaboratively design a benchmark.
 
-By providing a shared platform where old and current ideas are rigorously tested, and new ideas can be easily validated, 
-
-A platform like this should be build upon the idea that future methods and output formats can never be predicted, but at least we can prepare for them.
-
-### Reports as a forum
-
-- Discuss multiple possible interpretations
-- Self-assessment trap [@doi:10.1038/msb.2011.70]
+In the ideal case, a continuous benchmarking project should be supported by a larger consortium, such as the Human Cell Atlas, which would not only assure its continuity, but would also provide infrastructural support. In particular, services which have strong requirements on the side of storage and/or computing power would benefit from this, such as continuous integration, the code sharing platform and execution environment.
