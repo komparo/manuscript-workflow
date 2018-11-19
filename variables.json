@@ -2,7 +2,8 @@
   "date": "November 19, 2018",
   "authors": [
     {
-      "name": "Wouter Saelens *",
+      "name": "Wouter Saelens",
+      "symbol_str": "\u066d",
       "github": "zouter",
       "initials": "WS",
       "orcid": "0000-0002-7114-6248",
@@ -19,7 +20,8 @@
       ]
     },
     {
-      "name": "Robrecht Cannoodt *",
+      "name": "Robrecht Cannoodt",
+      "symbol_str": "\u066d",
       "github": "rcannood",
       "initials": "RC",
       "twitter": "rcannood",
@@ -62,7 +64,8 @@
       ]
     },
     {
-      "name": "Yvan Saeys *",
+      "name": "Yvan Saeys",
+      "symbol_str": "\u066d",
       "initials": "YS",
       "affiliations": [
         "Data Mining and Modelling for Biomedicine, VIB Center for Inflammation Research, Ghent, Belgium",
@@ -74,7 +77,8 @@
       ]
     },
     {
-      "name": "Mark D. Robinson *",
+      "name": "Mark D. Robinson",
+      "symbol_str": "\u066d",
       "initials": "MDR",
       "twitter": "markrobinsonca",
       "affiliations": [
@@ -113,7 +117,7 @@
     "repo_slug": "komparo/manuscript-workflow",
     "repo_owner": "komparo",
     "repo_name": "manuscript-workflow",
-    "commit": "285bb1b648f9cccbf8c8e2036618136b803c81c4"
+    "commit": "6c636302115dd450801d9adbc2cd621452271c91"
   },
   "manuscript_stats": {
     "reference_counts": {
@@ -121,6 +125,6 @@
       "doi": 14,
       "total": 15
     },
-    "word_count": 4338
+    "word_count": 4344
   }
 }
