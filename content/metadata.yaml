@@ -9,7 +9,8 @@ keywords:
 lang: en-US
 author_info:
   -
-    name: Wouter Saelens *
+    name: Wouter Saelens
+    symbol_str: "٭"
     github: zouter
     initials: WS
     orcid: 0000-0002-7114-6248
@@ -20,7 +21,8 @@ author_info:
       - Department of Applied Mathematics, Computer Science and Statistics, Ghent University, Ghent, Belgium
     funders: Fonds Wetenschappelijk Onderzoek
   - 
-    name: Robrecht Cannoodt *
+    name: Robrecht Cannoodt
+    symbol_str: "٭"
     github: rcannood
     initials: RC
     twitter: rcannood
@@ -44,13 +46,15 @@ author_info:
       - SIB Swiss Institute of Bioinformatics, University of Zurich, Zurich, Switzerland
       - Friedrich Miescher Institute for Biomedical Research, Basel, Switzerland
   -
-    name: Yvan Saeys *
+    name: Yvan Saeys
+    symbol_str: "٭"
     initials: YS
     affiliations:
       - Data Mining and Modelling for Biomedicine, VIB Center for Inflammation Research, Ghent, Belgium
       - Department of Applied Mathematics, Computer Science and Statistics, Ghent University, Ghent, Belgium
   - 
-    name: Mark D. Robinson *
+    name: Mark D. Robinson
+    symbol_str: "٭"
     initials: MDR
     twitter: markrobinsonca
     affiliations:
