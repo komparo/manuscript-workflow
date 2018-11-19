@@ -12,6 +12,8 @@ Within the TDE test case, we included
 
 A method module reads in (parts) of a dataset, and uses this to generate a model. Some special types of methods can be helpful to include at the start of a benchmark. Positive controls, for example a method that simply return the reference model of the dataset, and negative controls, for example a method which generate a random model, could be useful to make sure the metrics work correctly. _Off-the-shelf_ methods, methods that can be easily implemented with just a few lines of code, could be helpful as a baseline to other methods and to assess the difficulty of particular datasets.
 
+A common issue when benchmarking is the selection method parameters. It is not uncommon that the authors of a method disagree on what parameter settings were used for benchmarking [@doi:10.1101/385534; ]. <!---- TODO: find other recent biorxiv paper here -----> In our workflow, method authors are required to define for each parameter a default value, but also a distribution of values which can be used for parameter tuning in any form. <!---- TODO #5 : Expand with examples of types of parameter settings in benchmarks: manual tuning, automatic tuning, just defaults. And their advantages ----->
+
 ### Metrics
 
 Metric modules score the output of a model. Some metrics assess the accuracy of a model by comparing it with some reference model present in the dataset. Others will look at the resources consumed by the method, such as CPU time and memory, to assess its scalability. Models can also be compared to other models, for example to examine the stability of a method. Finally, some qualitative metrics can also be defined here, for example those that look at the usability of a method.
