@@ -10,7 +10,7 @@
   <meta name="author" content="Charlotte Soneson" />
   <meta name="author" content="Yvan Saeys *" />
   <meta name="author" content="Mark D. Robinson *" />
-  <meta name="dcterms.date" content="2018-11-18" />
+  <meta name="dcterms.date" content="2018-11-19" />
   <meta name="keywords" content="bioinformatics, methods, benchmarking, single-cell analysis" />
   <title>A workflow for continuous and collaborative benchmarking</title>
   <style type="text/css">
@@ -32,7 +32,7 @@
 <header id="title-block-header">
 <h1 class="title">A workflow for continuous and collaborative benchmarking</h1>
 </header>
-<p><small><em> This manuscript (<a href="https://komparo.github.io/manuscript-workflow/v/f77d5020cb8ca78ecb90d21bfa8c4248838421c6/">permalink</a>) was automatically generated from <a href="https://github.com/komparo/manuscript-workflow/tree/f77d5020cb8ca78ecb90d21bfa8c4248838421c6">komparo/manuscript-workflow@f77d502</a> on November 18, 2018. </em></small></p>
+<p><small><em> This manuscript (<a href="https://komparo.github.io/manuscript-workflow/v/92df67c5b19bb1ff6b227d807b56e2a3832aa64e/">permalink</a>) was automatically generated from <a href="https://github.com/komparo/manuscript-workflow/tree/92df67c5b19bb1ff6b227d807b56e2a3832aa64e">komparo/manuscript-workflow@92df67c</a> on November 19, 2018. </em></small></p>
 <h2 id="authors">Authors</h2>
 <ul>
 <li><p><strong>Wouter Saelens </strong>*<br> <img src="images/orcid.svg" alt="ORCID icon" width="13" height="13" /> <a href="https://orcid.org/0000-0002-7114-6248">0000-0002-7114-6248</a> · <img src="images/github.svg" alt="GitHub icon" width="13" height="13" /> <a href="https://github.com/zouter">zouter</a> · <img src="images/twitter.svg" alt="Twitter icon" width="13" height="13" /> <a href="https://twitter.com/zouters">zouters</a><br> <small> Data Mining and Modelling for Biomedicine, VIB Center for Inflammation Research, Ghent, Belgium; Department of Applied Mathematics, Computer Science and Statistics, Ghent University, Ghent, Belgium · Funded by Fonds Wetenschappelijk Onderzoek </small></p></li>
@@ -102,7 +102,7 @@ Only the most relevant limitations are discussed here, others:
 <li>Trajectory: This is more difficult, given the vast diversity in outputs of trajectory inference methods. In our recent benchmarking of these methods, we already created a common format for trajectories, and included this format in this benchmark as well. However, as we also acknowledge in that study, alternative formats may be possible.</li>
 <li>Trajectory differential expression: This is the the most difficult, because we had to make some educated guesses about how we expect the field to progress. While it impossible to know beforehand what formats will be ultimately needed, we can at least try to already predict for them. Based on what is already done by some existing methods, we defined several types of trajectory differential expression such as oscillatory (within a cyclical trajectory), pseudotime (expression that changes along pseudotime), and branch point (expression that happens at a particular branch point). We extended this with some other types of differential expression, such as local (changes in expression at a particular point of the trajectory) and overall (changes in expression anywhere in the trajectory). Each kind of differential expression is represented in a table format, where each differential expression event is represented in a row which can contain information on the associated p-value, a ranking and/or effect size.</li>
 </ul>
-<p>Scores and reports have less requirements regarding the formats. The most simplest format to represent a score is as an atomic value, in which each model can be summarized by one quantitave or qualitative value. Of course, more complex score formats are also possible. For reports, we included two formats. A static report with at least an index HTML or markdown file, together with any extra assets such as figures. A dynamic report on the other hand produces a software container which expose a web app through a port on execution.</p>
+<p>Scores and reports have less requirements regarding the formats. The most simplest format to represent a score is as an atomic value, in which each model can be summarized by one quantitave or qualitative value. Of course, more complex score formats are also possible. For reports, we included two formats. A static report with at least an index HTML or markdown file, together with any extra assets such as figures. A dynamic report on the other hand produces a software container which will expose a port serving a web app when ran.</p>
 <h2 id="module-types">Module types</h2>
 <p>In the benchmarking workflow, we define four types of modules. In our experience, these four modules are in most cases enough to construct a fully comprehensive benchmark of certain group of methods.</p>
 <h3 id="dataset-generators">Dataset generators</h3>
@@ -115,54 +115,26 @@ Only the most relevant limitations are discussed here, others:
 <h3 id="report-generators">Report generators</h3>
 <p>In the end, the scores are aggregated and interpreted using a report generator. This modules generates a report which can be static, such as a markdown document with some figures, or dynamic in the form of a web application. By crowdsourcing the interpretation of the benchmark in this way, it would become much less authorative and instead promote open discussion in the field <span class="citation" data-cites="YsUprDyN">[<a href="#ref-YsUprDyN">8</a>]</span>. It might certainly happen that different reports would contain contradicting results, but because each reports starts from the same set of data, it would be immediatly clear why the conclusions differ. For example, there might be subtle differences in how the scores have been averaged. Or, a report may only have focused on only a subset of the dataset which the authors found the most relevant for their method.</p>
 <h2 id="modules">Modules</h2>
-<h3 id="scripts-packages-and-a-portable-environment">Scripts, packages and a portable environment</h3>
-<p>A module needs to contain at least one script, which will read in the input data, process it in some way, and ultimately write the output data in the correct format.</p>
+<h3 id="scripts-a-portable-environment-and-metadata">Scripts, a portable environment and metadata</h3>
+<p>A module needs to contain at least command, which will run some code that reads in the input data, process it in some way, and ultimately write the output data in the correct format.</p>
 <p>Given the large diversity of programming languages used in computation biology, a collaborative benchmarking effort should try to avoid imposing limits on the kind of programming languages that can be used. As an example, the single-cell analysis field is split between tools written for R and Python <span class="citation" data-cites="ekkzy8ZR">[<a href="#ref-ekkzy8ZR">9</a>]</span>, and choosing one of these two would therefore alienate a signficant part of the field. Moreover, a collaborative effort should also be open for new languages such as Julia <span class="citation" data-cites="1B6CyO0CV">[<a href="#ref-1B6CyO0CV">10</a>]</span>, which could be more powerful and developer friendly for certain use cases.</p>
-<p>Apart from being language agnostic, the execution of a module should also happen on any computer in exactly the same way. To make the execution reproducible, we therefore require that a module defines a portable environment, which contains the necessary operating system, language interpreters and other packages to execute the code within the module. An environment can be portable on many levels: within one programming language such as virtualenv for python or packrat for R or across languages using package managers such as Conda. The most complete level of reproducibility can be obtained by working at the level of the operating system, through container systems such as docker or singularity. Finally, to be able execute stochastic code in a reproducible manner, it is also necessary to fix the pseudo-random number generator in some way, for example by setting an a priori defined seed through R or numpy.</p>
-<h3 id="module-metadata">Module metadata</h3>
-<ul>
-<li>Provides an interface between different modules</li>
-<li>Controls reproducible execution of the scripts within the environment</li>
-<li>Input and output should always be explicitely defined</li>
-<li>Rerunning the module, or parts of the module, should only be triggered if input has changed</li>
-<li>Checks whether the inputs are present</li>
-<li>Checks whether the outputs are created and validates this output</li>
-</ul>
-<h3 id="version-control">Version control</h3>
-<ul>
-<li>Crucial for keeping track of what was changed when</li>
-<li>Also crucial for collaborating</li>
-</ul>
-<h3 id="code-sharing-platform">Code sharing platform</h3>
-<p>Code sharing is more than a place to deposit code:</p>
-<ul>
-<li>Create issues</li>
-<li>Create pull requests</li>
-<li>Versioning the code</li>
-</ul>
-<h3 id="automated-testing-and-continuous-integration">Automated testing and continuous integration</h3>
-<p>Testing a module:</p>
-<ul>
-<li>Checks the modules content, e.g. if the metadata is complete</li>
-<li>Checks whether it fullfills the requirement for this module, e.g. if it wil generate the required outputs</li>
-<li>Tests whether it can be loaded</li>
-<li>Tests whether it can be run using small input data</li>
-<li>Validates the produced output</li>
-</ul>
-<p>While continuous integration for every module can sound like overdoing it, 90% of the errors are caught here. For small benchmarks, it is overkill, for large benchmarks, it is indispensible for maintainability</p>
-<h3 id="environment-registry">Environment registry</h3>
-<ul>
-<li>Easily downloadable by anyone wanting to replicate the environment</li>
-</ul>
+<p>Apart from being language agnostic, the execution of a module should also happen on any computer in exactly the same way. To make the execution reproducible, we therefore require that a module defines a portable environment, which contains the necessary operating system, language interpreters and other packages to execute the code within the module. An environment can be portable on many levels: within one programming language such as virtualenv for python or packrat for R or across languages using package managers such as Conda. The most complete level of reproducibility can be obtained by working at the level of the operating system, through container systems such as docker or singularity. Finally, to be able execute stochastic code in a reproducible manner, it is also necessary to fix the pseudo-random number generator in some way, we do this by always setting an a priori defined seed through R or numpy.</p>
+<p>A module also contains metadata, which lists the requirements to run the method such as the inputs, outputs and the name of the portable environment. Within our workflow, we also require some data for organisational purposes, such as a list of authors with their contributions, and the license of the code within the module.</p>
+<h3 id="version-control-and-code-sharing">Version control and code sharing</h3>
+<p>We require that the complete module, including the portable environment and metadata, is placed under version control so that any changes are tracked. The module is then shared on a code sharing platform, which makes it possible for other module authors and maintainers of the benchmark to file issues on the module, request some changes to the code through pull requests, and create a modifications if the license allows it. In our workflow, we use git for version control and GitHub as the platform to share modules, although it should be noted that powerful variants of the latter exist, including self-hosted ones.</p>
+<h3 id="continuous-integration">Continuous integration</h3>
+<p>To keep the development of a module and benchmark maintainable, it is important that each element of the module is automatically tested and validated. In this way, many errors are catched early, before they can impact other modules in the benchmark. Including automated testing also reduces the burden for those reviewing the modules. This crosstalk between automated testing and manual reviewing is already commonplace in many package repositories, such as CRAN and Bioconductor.</p>
+<p>In our proposed workflow, we automatically trigger a new test on <a href="https://www.travis-ci.com">travis-ci.com</a>, which is free for open-source projects. We test each module on several levels. We first check whether it contains all required content, and whether the metadata is complete. Next, we activate the portable environment, run the module on some small input data, and validate the produced output. If any of these steps fail, the author is notified. Only when tests are sucessful can the new module be integrated into the whole benchmark procedure.</p>
 <h2 id="combining-modules-within-a-benchmark">Combining modules within a benchmark</h2>
-<h3 id="combining-modules">Combining modules</h3>
+<p>In principle, it should be possible for anyone to extend or adapt the benchmark for their own purposes. At the same, it is also important to have a central place which lists all the modules and provides the most up-to-date set of reports for interested readers. To make this possible, our benchmarking workflow has one “main” repository, which lists the location of the different modules and how they are combined in the benchmark. Anyone can however create a fork of this repository, adapt the modules or benchmarking design in any way, and run it using their own infrastructure.</p>
+<h3 id="executing-the-benchmark">Executing the benchmark</h3>
+<p>For the execution of the modules, a pipeline manager such as snakemake <span class="citation" data-cites="NcYZqBux">[<a href="#ref-NcYZqBux">11</a>]</span> or nextflow <span class="citation" data-cites="4XDvZWxk">[<a href="#ref-4XDvZWxk">12</a>]</span> is almost indispensable. These tools make sure the modules are executed in the correct order and within a reproducible environment. Moreover, to make the benchmark scalable, a pipeline manager will only rerun those exeuctions for which any inputs have changed, which includes changes to any scripts or packages inside the portable environment. Within our benchmarking workflow, we created a custom pipeline manager for this, which provided us with some features that are lacking in most current pipeline managers, such as incrementality at the level of the portable environment, output validation and fixation of the pseudo-random number generator.</p>
 <h3 id="pipeline-manager">Pipeline manager</h3>
 <h3 id="execution">Execution</h3>
 <h3 id="continuous-publishing">Continuous publishing</h3>
 <h3 id="adding-or-updating-a-module">Adding or updating a module</h3>
-<h3 id="continuous-integration">Continuous integration</h3>
+<h3 id="continuous-integration-1">Continuous integration</h3>
 <h3 id="versioning">Versioning</h3>
-<h2 id="organisation">Organisation</h2>
 <h2 id="outlook">Outlook</h2>
 <p>The project as it stands now is meant to be a proof-of-concept. Technologies, and the companies and communities building them, come and go, and the tools we used for this benchmark will almost certainly feel outdated in a couple of years. The crucial point is not which tools are used, but what advantages they provide for the community: a portable environment, a reproducible workflow, a way to collaboratively design a benchmark, and ultimately a more democratic view of the field and its challenges lying ahead.</p>
 <p>In the ideal case, a continuous benchmarking project should be supported by a larger consortium, such as the Human Cell Atlas, which would not only assure its continuity, but would also provide infrastructure support. In particular, services which have strong requirements on the side of storage and/or computing power would benefit from this, such as continuous integration, the environment registry, and the execution cluster.</p>
@@ -171,7 +143,7 @@ Only the most relevant limitations are discussed here, others:
 <h3 id="reports-as-a-forum">Reports as a forum</h3>
 <ul>
 <li>Discuss multiple possible interpretations</li>
-<li>Self-assessment trap <span class="citation" data-cites="9jjMfS7z">[<a href="#ref-9jjMfS7z">11</a>]</span></li>
+<li>Self-assessment trap <span class="citation" data-cites="9jjMfS7z">[<a href="#ref-9jjMfS7z">13</a>]</span></li>
 </ul>
 <h2 id="references" class="page_break_before">References</h2>
 <!-- Explicitly insert bibliography here -->
@@ -235,8 +207,20 @@ DOI: <a href="https://doi.org/10.1371/journal.pcbi.1006245">10.1371/journal.pcbi
 Jeff Bezanson, Alan Edelman, Stefan Karpinski, Viral B. Shah<br />
 <em>arXiv</em> (2014-11-06) <a href="https://arxiv.org/abs/1411.1607v4">https://arxiv.org/abs/1411.1607v4</a></p>
 </div>
+<div id="ref-NcYZqBux">
+<p>11. <strong>Snakemake–a scalable bioinformatics workflow engine</strong><br />
+J. Koster, S. Rahmann<br />
+<em>Bioinformatics</em> (2012-08-20) <a href="https://doi.org/gd2xzq">https://doi.org/gd2xzq</a><br />
+DOI: <a href="https://doi.org/10.1093/bioinformatics/bts480">10.1093/bioinformatics/bts480</a> · PMID: <a href="http://www.ncbi.nlm.nih.gov/pubmed/22908215">22908215</a></p>
+</div>
+<div id="ref-4XDvZWxk">
+<p>12. <strong>Nextflow enables reproducible computational workflows</strong><br />
+Paolo Di Tommaso, Maria Chatzou, Evan W Floden, Pablo Prieto Barja, Emilio Palumbo, Cedric Notredame<br />
+<em>Nature Biotechnology</em> (2017-04) <a href="https://doi.org/gfj52z">https://doi.org/gfj52z</a><br />
+DOI: <a href="https://doi.org/10.1038/nbt.3820">10.1038/nbt.3820</a> · PMID: <a href="http://www.ncbi.nlm.nih.gov/pubmed/28398311">28398311</a></p>
+</div>
 <div id="ref-9jjMfS7z">
-<p>11. <strong>The self-assessment trap: can we all be better than average?</strong><br />
+<p>13. <strong>The self-assessment trap: can we all be better than average?</strong><br />
 R. Norel, J. J. Rice, G. Stolovitzky<br />
 <em>Molecular Systems Biology</em> (2014-04-16) <a href="https://doi.org/bxxmvz">https://doi.org/bxxmvz</a><br />
 DOI: <a href="https://doi.org/10.1038/msb.2011.70">10.1038/msb.2011.70</a> · PMID: <a href="http://www.ncbi.nlm.nih.gov/pubmed/21988833">21988833</a> · PMCID: <a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3261704">PMC3261704</a></p>

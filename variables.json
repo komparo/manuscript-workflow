@@ -1,5 +1,5 @@
 {
-  "date": "November 18, 2018",
+  "date": "November 19, 2018",
   "authors": [
     {
       "name": "Wouter Saelens *",
@@ -113,14 +113,14 @@
     "repo_slug": "komparo/manuscript-workflow",
     "repo_owner": "komparo",
     "repo_name": "manuscript-workflow",
-    "commit": "f77d5020cb8ca78ecb90d21bfa8c4248838421c6"
+    "commit": "92df67c5b19bb1ff6b227d807b56e2a3832aa64e"
   },
   "manuscript_stats": {
     "reference_counts": {
       "arxiv": 1,
-      "doi": 11,
-      "total": 12
+      "doi": 13,
+      "total": 14
     },
-    "word_count": 3623
+    "word_count": 3949
   }
 }

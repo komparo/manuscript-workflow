@@ -6,7 +6,7 @@ author-meta:
 - Charlotte Soneson
 - Yvan Saeys *
 - Mark D. Robinson *
-date-meta: '2018-11-18'
+date-meta: '2018-11-19'
 keywords:
 - bioinformatics
 - methods
@@ -23,10 +23,10 @@ title: A workflow for continuous and collaborative benchmarking
 
 <small><em>
 This manuscript
-([permalink](https://komparo.github.io/manuscript-workflow/v/f77d5020cb8ca78ecb90d21bfa8c4248838421c6/))
+([permalink](https://komparo.github.io/manuscript-workflow/v/92df67c5b19bb1ff6b227d807b56e2a3832aa64e/))
 was automatically generated
-from [komparo/manuscript-workflow@f77d502](https://github.com/komparo/manuscript-workflow/tree/f77d5020cb8ca78ecb90d21bfa8c4248838421c6)
-on November 18, 2018.
+from [komparo/manuscript-workflow@92df67c](https://github.com/komparo/manuscript-workflow/tree/92df67c5b19bb1ff6b227d807b56e2a3832aa64e)
+on November 19, 2018.
 </em></small>
 
 ## Authors
@@ -173,7 +173,7 @@ To represent a dataset and a model, we needed to define several formats grouped 
 * Trajectory: This is more difficult, given the vast diversity in outputs of trajectory inference methods. In our recent benchmarking of these methods, we already created a common format for trajectories, and included this format in this benchmark as well. However, as we also acknowledge in that study, alternative formats may be possible.
 * Trajectory differential expression: This is the the most difficult, because we had to make some educated guesses about how we expect the field to progress. While it impossible to know beforehand what formats will be ultimately needed, we can at least try to already predict for them. Based on what is already done by some existing methods, we defined several types of trajectory differential expression such as oscillatory (within a cyclical trajectory), pseudotime (expression that changes along pseudotime), and branch point (expression that happens at a particular branch point). We extended this with some other types of differential expression, such as local (changes in expression at a particular point of the trajectory) and overall (changes in expression anywhere in the trajectory). Each kind of differential expression is represented in a table format, where each differential expression event is represented in a row which can contain information on the associated p-value, a ranking and/or effect size.
 
-Scores and reports have less requirements regarding the formats. The most simplest format to represent a score is as an atomic value, in which each model can be summarized by one quantitave or qualitative value. Of course, more complex score formats are also possible. For reports, we included two formats. A static report with at least an index HTML or markdown file, together with any extra assets such as figures. A dynamic report on the other hand produces a software container which expose a web app through a port on execution.
+Scores and reports have less requirements regarding the formats. The most simplest format to represent a score is as an atomic value, in which each model can be summarized by one quantitave or qualitative value. Of course, more complex score formats are also possible. For reports, we included two formats. A static report with at least an index HTML or markdown file, together with any extra assets such as figures. A dynamic report on the other hand produces a software container which will expose a port serving a web app when ran.
 
 ## Module types
 
@@ -199,56 +199,34 @@ In the end, the scores are aggregated and interpreted using a report generator. 
 
 ## Modules
 
-### Scripts, packages and a portable environment
+### Scripts, a portable environment and metadata
 
-A module needs to contain at least one script, which will read in the input data, process it in some way, and ultimately write the output data in the correct format.
+A module needs to contain at least command, which will run some code that reads in the input data, process it in some way, and ultimately write the output data in the correct format.
 
 Given the large diversity of programming languages used in computation biology, a collaborative benchmarking effort should try to avoid imposing limits on the kind of programming languages that can be used. As an example, the single-cell analysis field is split between tools written for R and Python [@ekkzy8ZR], and choosing one of these two would therefore alienate a signficant part of the field. Moreover, a collaborative effort should also be open for new languages such as Julia [@1B6CyO0CV], which could be more powerful and developer friendly for certain use cases.
 
-Apart from being language agnostic, the execution of a module should also happen on any computer in exactly the same way. To make the execution reproducible, we therefore require that a module defines a portable environment, which contains the necessary operating system, language interpreters and other packages to execute the code within the module. An environment can be portable on many levels: within one programming language such as virtualenv for python or packrat for R or across languages using package managers such as Conda. The most complete level of reproducibility can be obtained by working at the level of the operating system, through container systems such as docker or singularity. Finally, to be able execute stochastic code in a reproducible manner, it is also necessary to fix the pseudo-random number generator in some way, for example by setting an a priori defined seed through R or numpy.
+Apart from being language agnostic, the execution of a module should also happen on any computer in exactly the same way. To make the execution reproducible, we therefore require that a module defines a portable environment, which contains the necessary operating system, language interpreters and other packages to execute the code within the module. An environment can be portable on many levels: within one programming language such as virtualenv for python or packrat for R or across languages using package managers such as Conda. The most complete level of reproducibility can be obtained by working at the level of the operating system, through container systems such as docker or singularity. Finally, to be able execute stochastic code in a reproducible manner, it is also necessary to fix the pseudo-random number generator in some way, we do this by always setting an a priori defined seed through R or numpy.
 
-### Module metadata
+A module also contains metadata, which lists the requirements to run the method such as the inputs, outputs and the name of the portable environment. Within our workflow, we also require some data for organisational purposes, such as a list of authors with their contributions, and the license of the code within the module.
 
-- Provides an interface between different modules
-- Controls reproducible execution of the scripts within the environment
-- Input and output should always be explicitely defined
-- Rerunning the module, or parts of the module, should only be triggered if input has changed
-- Checks whether the inputs are present
-- Checks whether the outputs are created and validates this output
+### Version control and code sharing
 
-### Version control
+We require that the complete module, including the portable environment and metadata, is placed under version control so that any changes are tracked. The module is then shared on a code sharing platform, which makes it possible for other module authors and maintainers of the benchmark to file issues on the module, request some changes to the code through pull requests, and create a modifications if the license allows it. In our workflow, we use git for version control and GitHub as the platform to share modules, although it should be noted that powerful variants of the latter exist, including self-hosted ones.
 
-- Crucial for keeping track of what was changed when
-- Also crucial for collaborating
+### Continuous integration
 
-### Code sharing platform
+To keep the development of a module and benchmark maintainable, it is important that each element of the module is automatically tested and validated. In this way, many errors are catched early, before they can impact other modules in the benchmark. Including automated testing also reduces the burden for those reviewing the modules. This crosstalk between automated testing and manual reviewing is already commonplace in many package repositories, such as CRAN and Bioconductor.
 
-Code sharing is more than a place to deposit code:
-
-- Create issues
-- Create pull requests
-- Versioning the code
-
-### Automated testing and continuous integration
-
-Testing a module:
-
-- Checks the modules content, e.g. if the metadata is complete
-- Checks whether it fullfills the requirement for this module, e.g. if it wil generate the required outputs
-- Tests whether it can be loaded
-- Tests whether it can be run using small input data
-- Validates the produced output
-
-While continuous integration for every module can sound like overdoing it, 90% of the errors are caught here. For small benchmarks, it is overkill, for large benchmarks, it is indispensible for maintainability
-
-### Environment registry
-
-- Easily downloadable by anyone wanting to replicate the environment
-
+In our proposed workflow, we automatically trigger a new test on [travis-ci.com](https://www.travis-ci.com), which is free for open-source projects. We test each module on several levels. We first check whether it contains all required content, and whether the metadata is complete. Next, we activate the portable environment, run the module on some small input data, and validate the produced output. If any of these steps fail, the author is notified. Only when tests are sucessful can the new module be integrated into the whole benchmark procedure.
 
 ## Combining modules within a benchmark
 
-### Combining modules
+In principle, it should be possible for anyone to extend or adapt the benchmark for their own purposes. At the same, it is also important to have a central place which lists all the modules and provides the most up-to-date set of reports for interested readers. To make this possible, our benchmarking workflow has one "main" repository, which lists the location of the different modules and how they are combined in the benchmark. Anyone can however create a fork of this repository, adapt the modules or benchmarking design in any way, and run it using their own infrastructure. 
+
+### Executing the benchmark
+
+For the execution of the modules, a pipeline manager such as snakemake [@NcYZqBux] or nextflow [@4XDvZWxk] is almost indispensable. These tools make sure the modules are executed in the correct order and within a reproducible environment. Moreover, to make the benchmark scalable, a pipeline manager will only rerun those exeuctions for which any inputs have changed, which includes changes to any scripts or packages inside the portable environment. Within our benchmarking workflow, we created a custom pipeline manager for this, which provided us with some features that are lacking in most current pipeline managers, such as incrementality at the level of the portable environment, output validation and fixation of the pseudo-random number generator.
+
 
 ### Pipeline manager
 
@@ -262,8 +240,6 @@ While continuous integration for every module can sound like overdoing it, 90% o
 
 ### Versioning
 
-
-## Organisation
 
 ## Outlook
 

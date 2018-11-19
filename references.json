@@ -157,6 +157,56 @@
   {
     "publisher": "Springer Nature",
     "issue": "4",
+    "DOI": "10.1038/nbt.3820",
+    "type": "article-journal",
+    "page": "316-319",
+    "source": "Crossref",
+    "title": "Nextflow enables reproducible computational workflows",
+    "volume": "35",
+    "author": [
+      {
+        "given": "Paolo",
+        "family": "Di Tommaso"
+      },
+      {
+        "given": "Maria",
+        "family": "Chatzou"
+      },
+      {
+        "given": "Evan W",
+        "family": "Floden"
+      },
+      {
+        "given": "Pablo Prieto",
+        "family": "Barja"
+      },
+      {
+        "given": "Emilio",
+        "family": "Palumbo"
+      },
+      {
+        "given": "Cedric",
+        "family": "Notredame"
+      }
+    ],
+    "container-title": "Nature Biotechnology",
+    "language": "en",
+    "issued": {
+      "date-parts": [
+        [
+          2017,
+          4
+        ]
+      ]
+    },
+    "URL": "https://doi.org/gfj52z",
+    "container-title-short": "Nat Biotechnol",
+    "PMID": "28398311",
+    "id": "4XDvZWxk"
+  },
+  {
+    "publisher": "Springer Nature",
+    "issue": "4",
     "DOI": "10.1038/nmeth.3805",
     "type": "article-journal",
     "page": "283-283",
@@ -242,6 +292,41 @@
     "PMCID": "PMC5764547",
     "PMID": "28825705",
     "id": "16zLRyIvX"
+  },
+  {
+    "publisher": "Oxford University Press (OUP)",
+    "issue": "19",
+    "DOI": "10.1093/bioinformatics/bts480",
+    "type": "article-journal",
+    "page": "2520-2522",
+    "source": "Crossref",
+    "title": "Snakemake--a scalable bioinformatics workflow engine",
+    "volume": "28",
+    "author": [
+      {
+        "given": "J.",
+        "family": "Koster"
+      },
+      {
+        "given": "S.",
+        "family": "Rahmann"
+      }
+    ],
+    "container-title": "Bioinformatics",
+    "language": "en",
+    "issued": {
+      "date-parts": [
+        [
+          2012,
+          8,
+          20
+        ]
+      ]
+    },
+    "URL": "https://doi.org/gd2xzq",
+    "container-title-short": "Bioinformatics",
+    "PMID": "22908215",
+    "id": "NcYZqBux"
   },
   {
     "publisher": "Oxford University Press (OUP)",
