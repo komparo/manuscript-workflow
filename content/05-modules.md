@@ -1,36 +1,22 @@
 ## Modules
 
-### Scripts, packages and a portable environment
+### Scripts, a portable environment and metadata
 
-A module needs to contain at least one script, which will read in the input data, process it in some way, and ultimately write the output data in the correct format.
+A module needs to contain at least command, which will run some code that reads in the input data, process it in some way, and ultimately write the output data in the correct format.
 
 Given the large diversity of programming languages used in computation biology, a collaborative benchmarking effort should try to avoid imposing limits on the kind of programming languages that can be used. As an example, the single-cell analysis field is split between tools written for R and Python [@doi:10.1371/journal.pcbi.1006245], and choosing one of these two would therefore alienate a signficant part of the field. Moreover, a collaborative effort should also be open for new languages such as Julia [@arxiv:1411.1607], which could be more powerful and developer friendly for certain use cases.
 
-Apart from being language agnostic, the execution of a module should also happen on any computer in exactly the same way. To make the execution reproducible, we therefore require that a module defines a portable environment, which contains the necessary operating system, language interpreters and other packages to execute the code within the module. An environment can be portable on many levels: within one programming language such as virtualenv for python or packrat for R or across languages using package managers such as Conda. The most complete level of reproducibility can be obtained by working at the level of the operating system, through container systems such as docker or singularity. Finally, to be able execute stochastic code in a reproducible manner, it is also necessary to fix the pseudo-random number generator in some way, for example by setting an a priori defined seed through R or numpy.
+Apart from being language agnostic, the execution of a module should also happen on any computer in exactly the same way. To make the execution reproducible, we therefore require that a module defines a portable environment, which contains the necessary operating system, language interpreters and other packages to execute the code within the module. An environment can be portable on many levels: within one programming language such as virtualenv for python or packrat for R or across languages using package managers such as Conda. The most complete level of reproducibility can be obtained by working at the level of the operating system, through container systems such as docker or singularity. Finally, to be able execute stochastic code in a reproducible manner, it is also necessary to fix the pseudo-random number generator in some way, we do this by always setting an a priori defined seed through R or numpy.
 
-### Module metadata
+A module also contains metadata, which lists the requirements to run the method such as the inputs, outputs and the name of the portable environment. Within our workflow, we also require some data for organisational purposes, such as a list of authors with their contributions, and the license of the code within the module.
 
-- Provides an interface between different modules
-- Controls reproducible execution of the scripts within the environment
-- Input and output should always be explicitely defined
-- Rerunning the module, or parts of the module, should only be triggered if input has changed
-- Checks whether the inputs are present
-- Checks whether the outputs are created and validates this output
+### Version control and code sharing
 
-### Version control
+We require that the complete module, including the portable environment and metadata, is placed under version control so that any changes can be track. The module is then shared on a code sharing platform, which makes it possible for other contributors and maintainrs of the benchmark to file issues on the module, request some changes to the code through pull requests, and create a modifications if the license allows it. In our workflow, we use git for version control and GitHub as the platform to share modules, although it should be noted that powerful variants of the latter exist, including self-hosted ones.
 
-- Crucial for keeping track of what was changed when
-- Also crucial for collaborating
+### Continuous integration
 
-### Code sharing platform
-
-Code sharing is more than a place to deposit code:
-
-- Create issues
-- Create pull requests
-- Versioning the code
-
-### Automated testing and continuous integration
+To keep the development of a module and the whole benchmark maintainable, it is important that the code is automatically tested and validated. This 
 
 Testing a module:
 
