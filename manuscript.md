@@ -23,9 +23,9 @@ title: A workflow for continuous and collaborative benchmarking
 
 <small><em>
 This manuscript
-([permalink](https://komparo.github.io/manuscript-workflow/v/92df67c5b19bb1ff6b227d807b56e2a3832aa64e/))
+([permalink](https://komparo.github.io/manuscript-workflow/v/285bb1b648f9cccbf8c8e2036618136b803c81c4/))
 was automatically generated
-from [komparo/manuscript-workflow@92df67c](https://github.com/komparo/manuscript-workflow/tree/92df67c5b19bb1ff6b227d807b56e2a3832aa64e)
+from [komparo/manuscript-workflow@285bb1b](https://github.com/komparo/manuscript-workflow/tree/285bb1b648f9cccbf8c8e2036618136b803c81c4)
 on November 19, 2018.
 </em></small>
 
@@ -85,7 +85,7 @@ on November 19, 2018.
 
 ## Abstract {.page_break_before}
 
-Benchmarking is a critical step in the development of bioinformatics tools, but the way benchmarking is done at the moment has some limitations. Because each benchmark is developed in isolation, they tend to be hard to compare, extend and are rapidly outdated. Moreover, benchmarks are usually rapidily outdated as new methods are developed. To address these challenges, we combined modern software development tools to create a workflow for continuous and collaborative benchmarking. The structure of the benchmark is highly modular, so that anyone can contribute a set of datasets, metrics, methods or interprete the results, and get credit for their contributions. As a test case, we applied this worklow on an emerging type of analysis in the single-cell field: trajectory differential expression, available at [https://github.com/komparo/tde](https://github.com/komparo/tde). A skeleton version of the workflow, which can be used to create a similar benchmarking workflow for a different type of methods, can be found at [https://github.com/komparo/skeleton](https://github.com/komparo/skeleton).
+Benchmarking is a critical step in the development of bioinformatics tools, but the way benchmarking is done at the moment has some limitations. Because each benchmark is developed in isolation, they tend to be hard to compare, extend and are rapidly outdated. Moreover, benchmarks are usually rapidily outdated as new methods are developed. To address these challenges, we combined modern software development tools to create a workflow for continuous and collaborative benchmarking. The structure of the benchmark is highly modular, so that anyone can contribute a set of datasets, metrics, methods or interprete the results, and get credit for their contributions. We also discuss some organisational issues, and propose ways on how to solve them. As a test case, we applied this worklow on an emerging type of analysis in the single-cell field: trajectory differential expression, available at [https://github.com/komparo/tde](https://github.com/komparo/tde). A skeleton version of the workflow, which can be used to create a similar benchmarking workflow for a different type of methods, can be found at [https://github.com/komparo/skeleton](https://github.com/komparo/skeleton).
 
 
 ## Introduction
@@ -189,6 +189,8 @@ Within the TDE test case, we included
 
 A method module reads in (parts) of a dataset, and uses this to generate a model. Some special types of methods can be helpful to include at the start of a benchmark. Positive controls, for example a method that simply return the reference model of the dataset, and negative controls, for example a method which generate a random model, could be useful to make sure the metrics work correctly. _Off-the-shelf_ methods, methods that can be easily implemented with just a few lines of code, could be helpful as a baseline to other methods and to assess the difficulty of particular datasets.
 
+A common issue when benchmarking is the selection method parameters. It is not uncommon that the authors of a method disagree on what parameter settings were used for benchmarking [@5CsWRjfp; ]. <!---- TODO: find other recent biorxiv paper here -----> In our workflow, method authors are required to define for each parameter a default value, but also a distribution of values which can be used for parameter tuning in any form. <!---- TODO #5 : Expand with examples of types of parameter settings in benchmarks: manual tuning, automatic tuning, just defaults. And their advantages ----->
+
 ### Metrics
 
 Metric modules score the output of a model. Some metrics assess the accuracy of a model by comparing it with some reference model present in the dataset. Others will look at the resources consumed by the method, such as CPU time and memory, to assess its scalability. Models can also be compared to other models, for example to examine the stability of a method. Finally, some qualitative metrics can also be defined here, for example those that look at the usability of a method.
@@ -213,7 +215,7 @@ A module also contains metadata, which lists the requirements to run the method 
 
 We require that the complete module, including the portable environment and metadata, is placed under version control so that any changes are tracked. The module is then shared on a code sharing platform, which makes it possible for other module authors and maintainers of the benchmark to file issues on the module, request some changes to the code through pull requests, and create a modifications if the license allows it. In our workflow, we use git for version control and GitHub as the platform to share modules, although it should be noted that powerful variants of the latter exist, including self-hosted ones.
 
-### Continuous integration
+### Continuous testing and validation
 
 To keep the development of a module and benchmark maintainable, it is important that each element of the module is automatically tested and validated. In this way, many errors are catched early, before they can impact other modules in the benchmark. Including automated testing also reduces the burden for those reviewing the modules. This crosstalk between automated testing and manual reviewing is already commonplace in many package repositories, such as CRAN and Bioconductor.
 
@@ -221,41 +223,31 @@ In our proposed workflow, we automatically trigger a new test on [travis-ci.com]
 
 ## Combining modules within a benchmark
 
-In principle, it should be possible for anyone to extend or adapt the benchmark for their own purposes. At the same, it is also important to have a central place which lists all the modules and provides the most up-to-date set of reports for interested readers. To make this possible, our benchmarking workflow has one "main" repository, which lists the location of the different modules and how they are combined in the benchmark. Anyone can however create a fork of this repository, adapt the modules or benchmarking design in any way, and run it using their own infrastructure. 
+To make the benchmark as inclusive as possible, it should be possible for anyone to extend or adapt the benchmark for their own purposes. At the same, it would also be useful to have a central place which lists all the modules and provides the most up-to-date set of reports for interested readers. To reconcile these two criteria, our benchmarking workflow has one "main" repository, which lists the location of the different modules and how they are combined in the benchmark. Anyone can however create a fork of this repository, adapt the modules or benchmarking design in any way, and run it using their own infrastructure.
 
 ### Executing the benchmark
 
 For the execution of the modules, a pipeline manager such as snakemake [@NcYZqBux] or nextflow [@4XDvZWxk] is almost indispensable. These tools make sure the modules are executed in the correct order and within a reproducible environment. Moreover, to make the benchmark scalable, a pipeline manager will only rerun those exeuctions for which any inputs have changed, which includes changes to any scripts or packages inside the portable environment. Within our benchmarking workflow, we created a custom pipeline manager for this, which provided us with some features that are lacking in most current pipeline managers, such as incrementality at the level of the portable environment, output validation and fixation of the pseudo-random number generator.
 
-
-### Pipeline manager
-
-### Execution
-
-### Continuous publishing
-
 ### Adding or updating a module
 
-### Continuous integration
+While anyone is able to fork and modify the benchmark repository, modifications to the main repository, such as additions or updates of a module, still requires some form of control by a group of maintainers. This group of maintainers, which would primarily consist of authors of other modules, are responsible for checking whether the module has passed all automated checks. and give feedback regarding data formats and testing results. Important here is that this reviewing happens in a completely open fashion, similar as to what is done in some open-source communities such as Bioconductor and ropensci ([https://github.com/ropensci/onboarding](https://github.com/ropensci/onboarding)).
 
-### Versioning
+In our workflow, adding or updating a module can be done by cloning the repository, making the necessary changes, and then creating a pull request on Github.
 
+### Continuous benchmarking and versioning
+
+Every time the main repository is updated, for example with a new version of a module, an update of the whole benchmark workflow is triggered. Only those modules with outdated input, because the code, environment or some input files changed, are rerun.
+
+The end results of the benchmark are one or more reports, which are freely accessible online. On regulator time intervals, such as on a monthly basis, all the reports are gathered and released as a new "version", which includes a changelog of updates to any of the modules made before the last release. This release is given a digital object identifier and registered at an open-access repository such as zenodo or figshare.
 
 ## Outlook
 
-The project as it stands now is meant to be a proof-of-concept. Technologies, and the companies and communities building them, come and go, and the tools we used for this benchmark will almost certainly feel outdated in a couple of years. The crucial point is not which tools are used, but what advantages they provide for the community: a portable environment, a reproducible workflow, a way to collaboratively design a benchmark, and ultimately a more democratic view of the field and its challenges lying ahead.
+Continuous and collaborative benchmarking provides an alternative and powerful way to evaluate methods in computational biology. It relies heavily on modularisation and tools from software development, which make it possible to design a benchmarking strategy that can be easily extended by anyone, while still allowing for open discussion to exist in a field. Because less effort is spend developing new benchmarking workflows for every new method, this workflow would speed up method development in bioinformatics. Because the results of the benchmark can be easily interpreted by anyone, it would also avoid other issues such as the self-assessment trap [@9jjMfS7z].
 
-In the ideal case, a continuous benchmarking project should be supported by a larger consortium, such as the Human Cell Atlas, which would not only assure its continuity, but would also provide infrastructure support. In particular, services which have strong requirements on the side of storage and/or computing power would benefit from this, such as continuous integration, the environment registry, and the execution cluster.
+We created both a case study of the workflow [https://github.com/komparo/tde](https://github.com/komparo/tde), and a skeleton version which provides instructions on how to set up the workflow [https://github.com/komparo/tde](https://github.com/komparo/tde). Of course, as technologies and the communities building them come and go, the tools we used for this benchmark will almost certainly be replaced by more powerful tools soon. The crucial point is not which tools that are used, but what advantages they provide for the community: a portable environment, a reproducible workflow and a set of tools to collaboratively design a benchmark.
 
-By providing a shared platform where old and current ideas are rigorously tested, and new ideas can be easily validated, 
-
-A platform like this should be build upon the idea that future methods and output formats can never be predicted, but at least we can prepare for them.
-
-### Reports as a forum
-
-- Discuss multiple possible interpretations
-- Self-assessment trap [@9jjMfS7z]
-
+In the ideal case, a continuous benchmarking project should be supported by a larger consortium, such as the Human Cell Atlas, which would not only assure its continuity, but would also provide infrastructural support. In particular, services which have strong requirements on the side of storage and/or computing power would benefit from this, such as continuous integration, the code sharing platform and execution environment.
 
 ## References {.page_break_before}
 
