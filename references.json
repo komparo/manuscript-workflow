@@ -330,10 +330,13 @@
   },
   {
     "publisher": "Oxford University Press (OUP)",
+    "issue": "1",
     "DOI": "10.1093/bioinformatics/bty627",
     "type": "article-journal",
+    "page": "137-139",
     "source": "Crossref",
     "title": "Reproducible and replicable comparisons using SummarizedBenchmark",
+    "volume": "35",
     "author": [
       {
         "given": "Patrick K",

@@ -1,5 +1,5 @@
 {
-  "date": "November 19, 2018",
+  "date": "December 20, 2018",
   "authors": [
     {
       "name": "Wouter Saelens",
@@ -117,7 +117,7 @@
     "repo_slug": "komparo/manuscript-workflow",
     "repo_owner": "komparo",
     "repo_name": "manuscript-workflow",
-    "commit": "6c636302115dd450801d9adbc2cd621452271c91"
+    "commit": "0e9e7e1e56b09cc70ab049d67045c43b8ba7c013"
   },
   "manuscript_stats": {
     "reference_counts": {

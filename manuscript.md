@@ -6,7 +6,7 @@ author-meta:
 - Charlotte Soneson
 - Yvan Saeys
 - Mark D. Robinson
-date-meta: '2018-11-19'
+date-meta: '2018-12-20'
 keywords:
 - bioinformatics
 - methods
@@ -23,10 +23,10 @@ title: A workflow for continuous and collaborative benchmarking
 
 <small><em>
 This manuscript
-([permalink](https://komparo.github.io/manuscript-workflow/v/6c636302115dd450801d9adbc2cd621452271c91/))
+([permalink](https://komparo.github.io/manuscript-workflow/v/0e9e7e1e56b09cc70ab049d67045c43b8ba7c013/))
 was automatically generated
-from [komparo/manuscript-workflow@6c63630](https://github.com/komparo/manuscript-workflow/tree/6c636302115dd450801d9adbc2cd621452271c91)
-on November 19, 2018.
+from [komparo/manuscript-workflow@0e9e7e1](https://github.com/komparo/manuscript-workflow/tree/0e9e7e1e56b09cc70ab049d67045c43b8ba7c013)
+on December 20, 2018.
 </em></small>
 
 ## Authors
